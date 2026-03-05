@@ -107,7 +107,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
 
   useEffect(() => {
     if (phase === "welcome" && authAccount) {
-      const timer = setTimeout(() => onLogin(authAccount), 3000)
+      const timer = setTimeout(() => onLogin(authAccount), 4500)
       return () => clearTimeout(timer)
     }
   }, [phase, authAccount, onLogin])
@@ -161,15 +161,40 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
               <GoldGeometry />
 
               {/* Glow centred on headline zone */}
-              <div className="absolute pointer-events-none" style={{
-                top: "20%", left: "-12%",
-                width: "700px", height: "700px", borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(197,160,89,0.07) 0%, transparent 58%)",
-              }} />
-              <div className="absolute bottom-0 right-0 pointer-events-none" style={{
-                width: "220px", height: "220px",
-                background: "radial-gradient(circle at bottom right, rgba(197,160,89,0.08) 0%, transparent 70%)",
-              }} />
+              <motion.div
+                className="absolute pointer-events-none"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                style={{
+                  top: "20%", left: "-12%",
+                  width: "700px", height: "700px", borderRadius: "50%",
+                  background: "radial-gradient(circle, rgba(197,160,89,0.09) 0%, transparent 58%)",
+                }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-0 pointer-events-none"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.5, 0.8, 0.5],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2
+                }}
+                style={{
+                  width: "220px", height: "220px",
+                  background: "radial-gradient(circle at bottom right, rgba(197,160,89,0.1) 0%, transparent 70%)",
+                }}
+              />
 
               {/* ── Single content block — everything in sequence ─────────── */}
               <motion.div
@@ -340,12 +365,39 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
               <div className="absolute inset-0 pointer-events-none" style={{
                 backgroundImage: "repeating-linear-gradient(90deg, transparent 0, transparent 79px, rgba(197,160,89,0.012) 80px)",
               }} />
+              <motion.div
+                className="absolute inset-0 pointer-events-none opacity-20"
+                style={{
+                  background: "linear-gradient(180deg, transparent 0%, rgba(197,160,89,0.03) 50%, transparent 100%)",
+                  backgroundSize: "100% 200%",
+                }}
+                animate={{
+                  backgroundPosition: ["0% 0%", "0% 200%"]
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
               {/* Single warm glow — upper right only */}
-              <div className="absolute pointer-events-none" style={{
-                top: "8%", right: "-25%",
-                width: "480px", height: "480px", borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(197,160,89,0.048) 0%, transparent 60%)",
-              }} />
+              <motion.div
+                className="absolute pointer-events-none"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.7, 1, 0.7],
+                }}
+                transition={{
+                  duration: 12,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                style={{
+                  top: "8%", right: "-25%",
+                  width: "480px", height: "480px", borderRadius: "50%",
+                  background: "radial-gradient(circle, rgba(197,160,89,0.06) 0%, transparent 60%)",
+                }}
+              />
 
               {/* Language toggle */}
               <button
@@ -608,14 +660,31 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
         {/* ═══════════════════════════ WELCOME ════════════════════════════════ */}
 
         {phase === "welcome" && authAccount && (
-          <motion.div key="welcome" className="flex h-full w-full items-center justify-center"
+          <motion.div key="welcome" className="flex h-full w-full items-center justify-center relative overflow-hidden"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
           >
+            <div className="scanline-effect" />
+
+            {/* Immersive Welcome Background Elements */}
+            <motion.div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: "radial-gradient(circle at center, rgba(197,160,89,0.08) 0%, transparent 60%)",
+              }}
+              animate={{
+                scale: [1, 1.15, 1],
+                opacity: [0.6, 1, 0.6],
+              }}
+              transition={{
+                duration: 6,
+                ease: "easeInOut",
+                repeat: Infinity
+              }}
+            />
+            <div className="absolute inset-0 pointer-events-none noise-overlay opacity-30" />
+
             <GoldGeometry />
-            <div className="absolute inset-0 pointer-events-none" style={{
-              background: "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(197,160,89,0.06) 0%, transparent 70%)",
-            }} />
 
             {(() => {
               const cat = getCategoryInfo(authAccount.avatarType, locale)
@@ -623,78 +692,154 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
               return (
                 <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-lg w-full">
                   <motion.div
-                    initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.15, duration: 0.5, type: "spring", stiffness: 220, damping: 18 }}
-                    className="relative w-24 h-24 rounded-full flex items-center justify-center"
-                    style={{ marginBottom: "24px", border: "1px solid rgba(16,185,129,0.3)",
-                      background: "rgba(16,185,129,0.06)", boxShadow: "0 0 40px rgba(16,185,129,0.12)" }}
+                    initial={{ scale: 0, opacity: 0, rotate: -45 }}
+                    animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                    transition={{ delay: 0.2, duration: 0.8, type: "spring", stiffness: 180, damping: 20 }}
+                    className="relative w-28 h-28 rounded-full flex items-center justify-center mb-8"
                   >
-                    <CheckCircle2 className="w-12 h-12 text-[#10B981]" />
+                    <div className="absolute inset-0 rounded-full"
+                         style={{
+                           border: "1px solid rgba(16,185,129,0.4)",
+                           background: "rgba(16,185,129,0.08)",
+                           boxShadow: "0 0 50px rgba(16,185,129,0.2), inset 0 0 20px rgba(16,185,129,0.1)"
+                         }}
+                    />
+
+                    <CheckCircle2 className="w-14 h-14 text-[#10B981] relative z-10 drop-shadow-[0_0_12px_rgba(16,185,129,0.6)]" />
+
+                    {/* Expanding animated rings */}
+                    <motion.div className="absolute inset-0 rounded-full border border-[rgba(16,185,129,0.3)]"
+                      animate={{ scale: [1, 1.4, 1.8], opacity: [0.8, 0.4, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.2 }} />
                     <motion.div className="absolute inset-0 rounded-full border border-[rgba(16,185,129,0.2)]"
-                      animate={{ scale: [1,1.25,1], opacity: [0.5,0,0.5] }}
-                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }} />
-                    <motion.div className="absolute rounded-full border border-[rgba(16,185,129,0.1)]"
-                      style={{ inset: "-12px" }}
-                      animate={{ scale: [1,1.15,1], opacity: [0.35,0,0.35] }}
-                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.4 }} />
+                      animate={{ scale: [1, 1.6, 2.2], opacity: [0.6, 0.2, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.8 }} />
+                    <motion.div className="absolute inset-0 rounded-full border border-[rgba(197,160,89,0.15)]"
+                      animate={{ scale: [1, 1.2, 1.4], opacity: [0.4, 0.1, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 1.4 }} />
                   </motion.div>
 
-                  <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-                    className="font-[var(--font-jetbrains)] uppercase text-[#10B981]"
-                    style={{ fontSize: "11px", letterSpacing: "0.45em", marginBottom: "12px" }}>
-                    {locale === "fr" ? "Identité Vérifiée · Accès Accordé" : "Identity Verified · Access Granted"}
-                  </motion.p>
-
-                  <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
-                    className="font-[var(--font-playfair)] text-xl sm:text-2xl lg:text-3xl" style={{ color: "rgba(255,255,255,0.65)", marginBottom: "2px" }}>
-                    {locale === "fr" ? "Bienvenue," : "Welcome,"}
-                  </motion.p>
-
-                  <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.62 }}
-                    className="gold-text-gradient font-[var(--font-playfair)] text-xl sm:text-2xl lg:text-3xl font-semibold" style={{ marginBottom: "4px" }}>
-                    {authAccount.fullName}
-                  </motion.p>
-
-                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.72 }}
-                    className="font-[var(--font-jetbrains)] uppercase"
-                    style={{ fontSize: "12px", letterSpacing: "0.25em", color: "#a8a8a8", marginBottom: "28px" }}>
-                    {authAccount.companyName}&nbsp;&mdash;&nbsp;{authAccount.investorId}
-                  </motion.p>
-
-                  <motion.div initial={{ opacity: 0, scale: 0.9, y: 8 }} animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ delay: 0.82, duration: 0.5, type: "spring", stiffness: 180 }}
-                    className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl"
-                    style={{ marginBottom: "36px", border: `1px solid ${cat.border}`,
-                      background: cat.bg, boxShadow: `0 0 30px ${cat.glow}` }}>
-                    <div className="flex items-center justify-center rounded-xl shrink-0"
-                      style={{ width: "36px", height: "36px", background: cat.glow, border: `1px solid ${cat.border}` }}>
-                      <CatIcon style={{ width: "17px", height: "17px", color: cat.color }} />
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex flex-col items-center"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <motion.div
+                        className="w-1.5 h-1.5 rounded-full bg-[#10B981]"
+                        animate={{ opacity: [1, 0.4, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        style={{ boxShadow: "0 0 10px rgba(16,185,129,0.8)" }}
+                      />
+                      <p className="font-[var(--font-jetbrains)] uppercase text-[#10B981]"
+                        style={{ fontSize: "12px", letterSpacing: "0.45em" }}>
+                        {locale === "fr" ? "Accès Sécurisé Autorisé" : "Secure Access Authorized"}
+                      </p>
                     </div>
+
+                    <div className="flex flex-wrap justify-center items-end gap-x-3 gap-y-1 mb-2">
+                      <span className="font-[var(--font-playfair)] text-2xl sm:text-3xl lg:text-4xl" style={{ color: "rgba(255,255,255,0.7)" }}>
+                        {locale === "fr" ? "Bienvenue," : "Welcome,"}
+                      </span>
+                      <span className="gold-text-gradient font-[var(--font-playfair)] text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">
+                        {authAccount.fullName}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                      <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-[rgba(197,160,89,0.5)]" />
+                      <p className="font-[var(--font-jetbrains)] uppercase"
+                        style={{ fontSize: "11px", letterSpacing: "0.3em", color: "#a8a8a8" }}>
+                        {authAccount.companyName}
+                      </p>
+                      <div className="w-1 h-1 rounded-full bg-[rgba(197,160,89,0.5)]" />
+                      <p className="font-[var(--font-jetbrains)] uppercase text-[rgba(197,160,89,0.8)]"
+                        style={{ fontSize: "11px", letterSpacing: "0.2em" }}>
+                        {authAccount.investorId}
+                      </p>
+                      <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-[rgba(197,160,89,0.5)]" />
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ delay: 0.9, duration: 0.6, type: "spring", stiffness: 150 }}
+                    className="relative overflow-hidden inline-flex items-center gap-4 px-7 py-5 rounded-2xl mb-12"
+                    style={{
+                      border: `1px solid ${cat.border}`,
+                      background: `linear-gradient(145deg, ${cat.bg} 0%, rgba(0,0,0,0.4) 100%)`,
+                      boxShadow: `0 10px 40px -10px ${cat.glow}, inset 0 1px 0 rgba(255,255,255,0.05)`
+                    }}
+                  >
+                    <motion.div
+                      className="absolute top-0 left-0 w-full h-[1px]"
+                      style={{ background: `linear-gradient(90deg, transparent, ${cat.color}, transparent)` }}
+                      animate={{ x: ["-100%", "100%"] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                    />
+
+                    <div className="flex items-center justify-center rounded-xl shrink-0 relative"
+                      style={{ width: "42px", height: "42px", background: cat.glow, border: `1px solid ${cat.border}` }}>
+                      <CatIcon style={{ width: "20px", height: "20px", color: cat.color }} />
+                      <div className="absolute inset-0 rounded-xl bg-white opacity-0 hover:opacity-10 transition-opacity" />
+                    </div>
+
                     <div className="text-left">
                       <p className="font-[var(--font-jetbrains)] uppercase"
-                        style={{ fontSize: "11px", letterSpacing: "0.25em", color: "#888888" }}>
-                        {locale === "fr" ? "Classification Investisseur" : "Investor Classification"}
+                        style={{ fontSize: "10px", letterSpacing: "0.3em", color: "#888888", marginBottom: "4px" }}>
+                        {locale === "fr" ? "Classification Elite" : "Elite Classification"}
                       </p>
-                      <p className="font-semibold tracking-wide" style={{ color: cat.color, marginTop: "2px", fontSize: "15px" }}>
-                        {cat.label}
-                      </p>
+                      <div className="flex items-center gap-3">
+                        <p className="font-semibold tracking-wide" style={{ color: cat.color, fontSize: "16px" }}>
+                          {cat.label}
+                        </p>
+                        <span className="font-[var(--font-jetbrains)] font-bold tracking-widest px-2 py-1 rounded-md"
+                          style={{ color: cat.color, background: "rgba(0,0,0,0.3)", border: `1px solid ${cat.border}`, fontSize: "9px" }}>
+                          {cat.badge}
+                        </span>
+                      </div>
                     </div>
-                    <span className="font-[var(--font-jetbrains)] font-bold tracking-widest px-2 py-1 rounded-md opacity-70"
-                      style={{ color: cat.color, background: cat.glow, border: `1px solid ${cat.border}`, marginLeft: "8px", fontSize: "8px" }}>
-                      {cat.badge}
-                    </span>
                   </motion.div>
 
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-                    className="flex items-center gap-2">
-                    {[0,1,2].map(i => (
-                      <motion.div key={i} className="w-1.5 h-1.5 rounded-full bg-[#C5A059]"
-                        animate={{ opacity: [0.25, 1, 0.25] }}
-                        transition={{ duration: 1.3, repeat: Infinity, delay: i * 0.25 }} />
-                    ))}
-                    <span style={{ fontSize: "10px", color: "#888888", marginLeft: "6px" }}>
-                      {locale === "fr" ? "Chargement de votre salle de données..." : "Loading your data room..."}
-                    </span>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.4, duration: 0.8 }}
+                    className="w-full max-w-[280px] flex flex-col items-center gap-3"
+                  >
+                    <div className="flex items-center justify-between w-full px-1">
+                      <span className="font-[var(--font-jetbrains)] uppercase text-[10px] tracking-[0.2em] text-[#888888]">
+                        {locale === "fr" ? "Déchiffrement" : "Decrypting"}
+                      </span>
+                      <span className="font-[var(--font-jetbrains)] uppercase text-[10px] tracking-[0.2em] text-[#C5A059]">
+                        100%
+                      </span>
+                    </div>
+
+                    <div className="w-full h-[3px] bg-[rgba(255,255,255,0.05)] rounded-full overflow-hidden relative">
+                      <motion.div
+                        className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#DFBD69] to-[#C5A059] rounded-full"
+                        initial={{ width: "0%" }}
+                        animate={{ width: "100%" }}
+                        transition={{ delay: 1.5, duration: 2.5, ease: "easeInOut" }}
+                      />
+                      <motion.div
+                        className="absolute top-0 left-0 h-full w-full bg-white opacity-30"
+                        initial={{ x: "-100%" }}
+                        animate={{ x: "100%" }}
+                        transition={{ delay: 1.5, duration: 1.5, repeat: Infinity, ease: "linear" }}
+                      />
+                    </div>
+
+                    <motion.div
+                      className="mt-2 text-[#888888] font-[var(--font-jetbrains)] text-[10px] tracking-widest uppercase"
+                      animate={{ opacity: [0.5, 1, 0.5] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      {locale === "fr" ? "Préparation de l'espace VDR..." : "Preparing VDR environment..."}
+                    </motion.div>
                   </motion.div>
                 </div>
               )
