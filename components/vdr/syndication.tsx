@@ -42,16 +42,16 @@ interface SyndicationProps {
 
 const SCENARIO_ORDER = ["bull", "base", "bear", "catastrophic"] as const
 const SCENARIO_COLORS: Record<string, string> = {
-  bull: "#10B981",
-  base: "#C5A059",
+  bull: "#0F9D58",
+  base: "#BEA365",
   bear: "#F59E0B",
-  catastrophic: "#EF4444",
+  catastrophic: "#D32F2F",
 }
 const SCENARIO_BG: Record<string, string> = {
-  bull: "rgba(16,185,129,0.08)",
-  base: "rgba(197,160,89,0.08)",
+  bull: "rgba(15,157,88,0.08)",
+  base: "rgba(190,163,101,0.08)",
   bear: "rgba(245,158,11,0.08)",
-  catastrophic: "rgba(239,68,68,0.08)",
+  catastrophic: "rgba(211,47,47,0.08)",
 }
 const SCENARIO_NAMES: Record<string, { en: string; fr: string }> = {
   bull: { en: "Bull", fr: "Haussier" },
@@ -145,13 +145,13 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
 
       {/* ── Syndicate Structure ── */}
       <Reveal delay={0.05}>
-        <div className="glass-form p-6 mb-8 border border-[rgba(197,160,89,0.2)]">
+        <div className="glass-form p-6 mb-8 border border-[rgba(190,163,101,0.2)]">
           <div className="flex items-center gap-2 mb-5">
-            <Users2 style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+            <Users2 style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h2 className="vdr-section-label">{sv.structureTitle}</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
-            <div className="glass-form p-4 border border-[rgba(197,160,89,0.2)]">
+            <div className="glass-form p-4 border border-[rgba(190,163,101,0.2)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.totalLpRaise}</p>
               <p className="gold-text-gradient font-mono text-lg font-bold">{fmt(lpCommitment)}</p>
               <p className="text-[11px] text-[#c0c0c0] mt-0.5">90% of total cost</p>
@@ -161,17 +161,17 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               <p className="font-mono text-lg font-bold text-[#ffffff]">{fmt(gpCommitment)}</p>
               <p className="text-[11px] text-[#c0c0c0] mt-0.5">Aligned GP skin-in-game</p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(16,185,129,0.2)]">
+            <div className="glass-form p-4 border border-[rgba(15,157,88,0.2)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.minTicket}</p>
-              <p className="font-mono text-lg font-bold text-[#10B981]">{fmt(macro.minTicketSize)}</p>
+              <p className="font-mono text-lg font-bold text-[#0F9D58]">{fmt(macro.minTicketSize)}</p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(16,185,129,0.2)]">
+            <div className="glass-form p-4 border border-[rgba(15,157,88,0.2)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.maxTicket}</p>
-              <p className="font-mono text-lg font-bold text-[#10B981]">
+              <p className="font-mono text-lg font-bold text-[#0F9D58]">
                 {macro.maxTicketSize >= lpCommitment ? "Full Deal" : fmt(macro.maxTicketSize)}
               </p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(197,160,89,0.15)]">
+            <div className="glass-form p-4 border border-[rgba(190,163,101,0.15)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.impliedSlots}</p>
               <p className="gold-text-gradient font-mono text-lg font-bold">{impliedSlots}</p>
               <p className="text-[11px] text-[#c0c0c0] mt-0.5">at min ticket</p>
@@ -182,16 +182,16 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
 
       {/* ── Commitment Calculator ── */}
       <Reveal delay={0.1}>
-        <div className="glass-form p-6 mb-8 border border-[rgba(197,160,89,0.15)]">
+        <div className="glass-form p-6 mb-8 border border-[rgba(190,163,101,0.15)]">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
-              <Calculator style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+              <Calculator style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
               <h2 className="vdr-section-label">{sv.calculatorTitle}</h2>
             </div>
             {isSoleLP && (
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#C5A059] bg-[rgba(197,160,89,0.1)]">
-                <Crown className="w-3 h-3 text-[#C5A059]" />
-                <span className="text-[11px] font-mono font-bold text-[#C5A059] tracking-widest">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#BEA365] bg-[rgba(190,163,101,0.1)]">
+                <Crown className="w-3 h-3 text-[#BEA365]" />
+                <span className="text-[11px] font-mono font-bold text-[#BEA365] tracking-widest">
                   {sv.soleLpBadge}
                 </span>
               </div>
@@ -208,8 +208,8 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 className={cn(
                   "px-3 py-1.5 rounded-md text-[11px] font-mono font-semibold tracking-wider border transition-all duration-200",
                   Math.abs(clampedTicket - p.value) < 1000
-                    ? "border-[#C5A059] bg-[rgba(197,160,89,0.15)] text-[#C5A059]"
-                    : "border-[rgba(255,255,255,0.1)] text-[#c0c0c0] hover:border-[rgba(197,160,89,0.4)] hover:text-[#ffffff]"
+                    ? "border-[#BEA365] bg-[rgba(190,163,101,0.25)] text-[#BEA365]"
+                    : "border-[rgba(255,255,255,0.1)] text-[#c0c0c0] hover:border-[rgba(190,163,101,0.4)] hover:text-[#ffffff]"
                 )}
               >
                 {p.label}
@@ -251,7 +251,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
           {/* Row 1: The 3 big numbers */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
             {/* LP Cash Back */}
-            <div className="glass-form p-5 border border-[rgba(197,160,89,0.25)] text-center">
+            <div className="glass-form p-5 border border-[rgba(190,163,101,0.25)] text-center">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-2">{sv.lpCashLabel}</p>
               <p className="gold-text-gradient font-mono text-3xl font-bold">
                 €<AnimatedValue value={slice.projectedLP} format="currency" />
@@ -259,7 +259,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               <p className="text-[11px] text-[#c0c0c0] mt-1">{sv.baseCaseLabel}</p>
             </div>
             {/* MOIC */}
-            <div className="glass-form p-5 border border-[rgba(197,160,89,0.25)] text-center">
+            <div className="glass-form p-5 border border-[rgba(190,163,101,0.25)] text-center">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-2">
                 <Explain k="moic">{sv.projectedMoic}</Explain>
               </p>
@@ -269,11 +269,11 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               <p className="text-[11px] text-[#c0c0c0] mt-1">{sv.baseCaseLabel}</p>
             </div>
             {/* IRR */}
-            <div className="glass-form p-5 border border-[rgba(16,185,129,0.25)] text-center">
+            <div className="glass-form p-5 border border-[rgba(15,157,88,0.25)] text-center">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-2">
                 <Explain k="irr">{sv.projectedIrr}</Explain>
               </p>
-              <p className="font-mono text-3xl font-bold text-[#10B981]">
+              <p className="font-mono text-3xl font-bold text-[#0F9D58]">
                 <AnimatedValue value={slice.projectedIRR} format="percent" decimals={1} />%
               </p>
               <p className="text-[11px] text-[#c0c0c0] mt-1">p.a. · {macro.projectMonths}-month hold</p>
@@ -284,21 +284,21 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="glass-form p-4 border border-[rgba(255,255,255,0.06)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.netProfitLabel}</p>
-              <p className={cn("font-mono text-xl font-bold", baseCaseProfit >= 0 ? "text-[#10B981]" : "text-[#EF4444]")}>
+              <p className={cn("font-mono text-xl font-bold", baseCaseProfit >= 0 ? "text-[#0F9D58]" : "text-[#D32F2F]")}>
                 {baseCaseProfit >= 0 ? "+" : ""}€<AnimatedValue value={Math.abs(baseCaseProfit)} format="currency" />
               </p>
               <p className="text-[11px] text-[#c0c0c0] mt-0.5">{locale === "fr" ? "Profit net cas de base" : "Net profit · base case"}</p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(197,160,89,0.1)]">
+            <div className="glass-form p-4 border border-[rgba(190,163,101,0.1)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.peakDeployedLabel}</p>
-              <p className="font-mono text-xl font-bold text-[#C5A059]">
+              <p className="font-mono text-xl font-bold text-[#BEA365]">
                 €<AnimatedValue value={investorPeakEquity} format="currency" />
               </p>
-              <p className="text-[11px] text-[#10B981] mt-0.5">
+              <p className="text-[11px] text-[#0F9D58] mt-0.5">
                 {vefaRecycled > 0 ? `${fmt(Math.round(vefaRecycled))} VEFA recycled` : "full draw required"}
               </p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(197,160,89,0.1)]">
+            <div className="glass-form p-4 border border-[rgba(190,163,101,0.1)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.bearCaseYield}</p>
               <p className="gold-text-gradient font-mono text-xl font-bold">
                 €<AnimatedValue value={slice.bearCaseAnnualYield} format="currency" />
@@ -314,7 +314,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
       <Reveal delay={0.2}>
         <div className="glass-form p-6 mb-8">
           <div className="flex items-center gap-2 mb-2">
-            <Zap style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+            <Zap style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h2 className="vdr-section-label">{sv.flowTitle}</h2>
           </div>
           <p className="text-xs text-[#c0c0c0] mb-7 leading-relaxed">{sv.flowDesc}</p>
@@ -323,7 +323,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
             {/* Vertical connector line */}
             <div
               className="absolute left-[19px] top-6 bottom-6 w-px"
-              style={{ background: "linear-gradient(180deg, #C5A059 0%, rgba(197,160,89,0.15) 100%)" }}
+              style={{ background: "linear-gradient(180deg, #BEA365 0%, rgba(190,163,101,0.3) 100%)" }}
             />
 
             {/* Steps */}
@@ -334,7 +334,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 amount: fmt(clampedTicket),
                 sub: sv.flowStep0Sub,
                 amtColor: "#a3a3a3",
-                icon: <ArrowDown className="w-3 h-3 text-[#EF4444]" />,
+                icon: <ArrowDown className="w-3 h-3 text-[#D32F2F]" />,
                 sign: "−",
               },
               {
@@ -342,8 +342,8 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 title: sv.flowStep1Title,
                 amount: fmt(call1),
                 sub: sv.flowStep1Sub,
-                amtColor: "#EF4444",
-                icon: <ArrowDown className="w-3 h-3 text-[#EF4444]" />,
+                amtColor: "#D32F2F",
+                icon: <ArrowDown className="w-3 h-3 text-[#D32F2F]" />,
                 sign: "−",
               },
               {
@@ -351,8 +351,8 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 title: sv.flowStep2Title,
                 amount: fmt(call2),
                 sub: sv.flowStep2Sub,
-                amtColor: "#EF4444",
-                icon: <ArrowDown className="w-3 h-3 text-[#EF4444]" />,
+                amtColor: "#D32F2F",
+                icon: <ArrowDown className="w-3 h-3 text-[#D32F2F]" />,
                 sign: "−",
               },
               {
@@ -360,8 +360,8 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 title: sv.flowStep3Title,
                 amount: `${fmt(Math.round(vefaRecycled))} recycled`,
                 sub: sv.flowStep3Sub,
-                amtColor: "#10B981",
-                icon: <ArrowUp className="w-3 h-3 text-[#10B981]" />,
+                amtColor: "#0F9D58",
+                icon: <ArrowUp className="w-3 h-3 text-[#0F9D58]" />,
                 sign: "↩",
               },
               {
@@ -369,14 +369,14 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 title: sv.flowStep4Title,
                 amount: fmt(slice.projectedLP),
                 sub: sv.flowStep4Sub,
-                amtColor: "#C5A059",
-                icon: <ArrowUp className="w-3 h-3 text-[#10B981]" />,
+                amtColor: "#BEA365",
+                icon: <ArrowUp className="w-3 h-3 text-[#0F9D58]" />,
                 sign: "+",
               },
             ].map((step, i) => (
               <div key={i} className="relative flex gap-4 mb-5 last:mb-0">
-                <div className="relative z-10 shrink-0 w-10 h-10 rounded-full glass-form border border-[rgba(197,160,89,0.3)] flex items-center justify-center">
-                  <span className="text-[11px] font-mono font-bold text-[#C5A059]">{i + 1}</span>
+                <div className="relative z-10 shrink-0 w-10 h-10 rounded-full glass-form border border-[rgba(190,163,101,0.3)] flex items-center justify-center">
+                  <span className="text-[11px] font-mono font-bold text-[#BEA365]">{i + 1}</span>
                 </div>
                 <div className="flex-1 glass-form p-4 rounded-xl border border-[rgba(255,255,255,0.05)]">
                   <div className="flex items-start justify-between gap-2">
@@ -396,7 +396,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                   {i === 4 && (
                     <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)] flex items-center justify-between">
                       <span className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0]">{sv.netProfitLabel}</span>
-                      <span className={cn("font-mono text-sm font-bold", baseCaseProfit >= 0 ? "text-[#10B981]" : "text-[#EF4444]")}>
+                      <span className={cn("font-mono text-sm font-bold", baseCaseProfit >= 0 ? "text-[#0F9D58]" : "text-[#D32F2F]")}>
                         {baseCaseProfit >= 0 ? "+" : ""}{fmt(baseCaseProfit)}
                       </span>
                     </div>
@@ -407,7 +407,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
           </div>
 
           {/* Peak equity summary */}
-          <div className="mt-6 p-4 rounded-xl border border-[rgba(197,160,89,0.25)] bg-[rgba(197,160,89,0.05)]">
+          <div className="mt-6 p-4 rounded-xl border border-[rgba(190,163,101,0.25)] bg-[rgba(190,163,101,0.05)]">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
                 <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-0.5">{sv.peakDeployedLabel}</p>
@@ -416,7 +416,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               <div className="text-right shrink-0">
                 <p className="gold-text-gradient font-mono text-2xl font-bold">{fmt(Math.round(investorPeakEquity))}</p>
                 {vefaRecycled > 0 && (
-                  <p className="text-[11px] text-[#10B981] font-mono mt-0.5">{sv.vefaRecycledLabel}: {fmt(Math.round(vefaRecycled))}</p>
+                  <p className="text-[11px] text-[#0F9D58] font-mono mt-0.5">{sv.vefaRecycledLabel}: {fmt(Math.round(vefaRecycled))}</p>
                 )}
               </div>
             </div>
@@ -428,7 +428,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
       <Reveal delay={0.3}>
         <div className="glass-form p-6 mb-8">
           <div className="flex items-center gap-2 mb-2">
-            <TrendingUp style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+            <TrendingUp style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h2 className="vdr-section-label">{sv.scenarioTitle}</h2>
           </div>
           <p className="text-xs text-[#c0c0c0] mb-5 leading-relaxed">{sv.scenarioDesc}</p>
@@ -446,7 +446,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                   key={s.id}
                   className={cn(
                     "p-5 rounded-xl border transition-all",
-                    isBase ? "border-[rgba(197,160,89,0.4)]" : "border-[rgba(255,255,255,0.06)]"
+                    isBase ? "border-[rgba(190,163,101,0.4)]" : "border-[rgba(255,255,255,0.06)]"
                   )}
                   style={{ background: bg }}
                 >
@@ -467,7 +467,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                       </p>
                       <p className="font-mono text-xl font-bold" style={{ color }}>{fmt(s.lpCash)}</p>
                       {isCatastrophic && (
-                        <p className="text-[11px] text-[#10B981] mt-0.5 font-medium">
+                        <p className="text-[11px] text-[#0F9D58] mt-0.5 font-medium">
                           Capital preserved — unencumbered hold
                         </p>
                       )}
@@ -496,7 +496,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                         {isCatastrophic && Math.abs(s.netProfit) < 1000 ? (
                           <p className="font-mono text-sm font-semibold text-[#c0c0c0]">Preserved</p>
                         ) : (
-                          <p className={cn("font-mono text-sm font-semibold", s.netProfit >= 0 ? "text-[#10B981]" : "text-[#EF4444]")}>
+                          <p className={cn("font-mono text-sm font-semibold", s.netProfit >= 0 ? "text-[#0F9D58]" : "text-[#D32F2F]")}>
                             {s.netProfit >= 0 ? "+" : ""}{fmtShort(s.netProfit)}
                           </p>
                         )}
@@ -506,14 +506,14 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                     {/* Annual Ijarah income overlay for yield scenarios */}
                     {s.isYieldScenario && s.investorAnnualIncome > 0 && (
                       <div
-                        className="mt-1 pt-2.5 border-t border-[rgba(16,185,129,0.2)] flex items-center justify-between"
-                        style={{ background: "rgba(16,185,129,0.04)", borderRadius: 6, padding: "8px 10px", margin: "0 -2px" }}
+                        className="mt-1 pt-2.5 border-t border-[rgba(15,157,88,0.2)] flex items-center justify-between"
+                        style={{ background: "rgba(15,157,88,0.04)", borderRadius: 6, padding: "8px 10px", margin: "0 -2px" }}
                       >
                         <div>
-                          <p className="text-[11px] tracking-[0.12em] uppercase text-[#10B981] opacity-90">
+                          <p className="text-[11px] tracking-[0.12em] uppercase text-[#0F9D58] opacity-90">
                             {locale === "fr" ? "Revenu Ijarah Annuel" : "Annual Ijarah Income"}
                           </p>
-                          <p className="font-mono text-sm font-bold text-[#10B981]">
+                          <p className="font-mono text-sm font-bold text-[#0F9D58]">
                             €{Math.round(s.investorAnnualIncome).toLocaleString()}/yr
                           </p>
                         </div>
@@ -521,7 +521,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                           <p className="text-[11px] text-[#c0c0c0]">
                             {locale === "fr" ? "Rendement perpétuel" : "Perpetual yield"}
                           </p>
-                          <p className="font-mono text-xs font-semibold text-[#10B981]">
+                          <p className="font-mono text-xs font-semibold text-[#0F9D58]">
                             {s.annualYield.toFixed(1)}% p.a.
                           </p>
                         </div>
@@ -574,7 +574,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                         {s.id === "catastrophic" && Math.abs(s.netProfit) < 1000 ? (
                           <span className="text-[#c0c0c0]">Preserved</span>
                         ) : (
-                          <span className={s.netProfit >= 0 ? "text-[#10B981]" : "text-[#EF4444]"}>
+                          <span className={s.netProfit >= 0 ? "text-[#0F9D58]" : "text-[#D32F2F]"}>
                             {s.netProfit >= 0 ? "+" : ""}{fmt(s.netProfit)}
                           </span>
                         )}
@@ -592,7 +592,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
       <Reveal delay={0.4}>
         <div className="glass-form p-6">
           <div className="flex items-center gap-2 mb-5">
-            <CheckCircle2 style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+            <CheckCircle2 style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h2 className="vdr-section-label">{sv.howToTitle}</h2>
           </div>
           <div className="space-y-0">
@@ -606,8 +606,8 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               ] as { label: string; desc: string }[]
             ).map((step, i) => (
               <div key={i} className="flex gap-4 items-start py-4 border-b border-[rgba(255,255,255,0.04)] last:border-0">
-                <div className="shrink-0 w-8 h-8 rounded-full glass-form flex items-center justify-center border border-[rgba(197,160,89,0.35)]">
-                  <span className="text-[11px] font-mono font-bold text-[#C5A059]">{i + 1}</span>
+                <div className="shrink-0 w-8 h-8 rounded-full glass-form flex items-center justify-center border border-[rgba(190,163,101,0.35)]">
+                  <span className="text-[11px] font-mono font-bold text-[#BEA365]">{i + 1}</span>
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-semibold text-[#ffffff] mb-1">{step.label}</p>

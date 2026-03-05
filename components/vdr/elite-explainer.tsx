@@ -50,7 +50,7 @@ export function EliteExplainer({ termKey, children }: EliteExplainerProps) {
     <span className="relative inline" ref={ref}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center gap-1 border-b border-dashed border-[rgba(197,160,89,0.5)] text-[#C5A059] hover:text-[#DFBD69] hover:border-[#DFBD69] transition-colors duration-200 cursor-help"
+        className="inline-flex items-center gap-1 border-b border-dashed border-[rgba(190,163,101,0.5)] text-[#BEA365] hover:text-[#DFBD69] hover:border-[#DFBD69] transition-colors duration-200 cursor-help"
         aria-label={`Learn about ${entry.term}`}
       >
         <span>{children || entry.term}</span>
@@ -67,12 +67,12 @@ export function EliteExplainer({ termKey, children }: EliteExplainerProps) {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 max-w-[85vw]"
           >
-            <div className="bg-[#0c0c0c] border border-[rgba(197,160,89,0.25)] rounded-lg shadow-2xl shadow-black/60 overflow-hidden">
+            <div className="bg-[#0c0c0c] border border-[rgba(190,163,101,0.25)] rounded-lg shadow-2xl shadow-black/60 overflow-hidden">
               {/* Header */}
-              <div className="flex items-center justify-between px-4 py-3 bg-[rgba(197,160,89,0.06)] border-b border-[rgba(197,160,89,0.15)]">
+              <div className="flex items-center justify-between px-4 py-3 bg-[rgba(190,163,101,0.06)] border-b border-[rgba(190,163,101,0.15)]">
                 <div className="flex items-center gap-2">
-                  <BookOpen className="w-3.5 h-3.5 text-[#C5A059]" />
-                  <span className="text-xs font-bold text-[#C5A059] tracking-wide">
+                  <BookOpen className="w-3.5 h-3.5 text-[#BEA365]" />
+                  <span className="text-xs font-bold text-[#BEA365] tracking-wide">
                     {entry.term}
                   </span>
                 </div>
@@ -100,7 +100,7 @@ export function EliteExplainer({ termKey, children }: EliteExplainerProps) {
               </div>
 
               {/* Footer accent line */}
-              <div className="h-0.5 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent opacity-30" />
+              <div className="h-0.5 bg-gradient-to-r from-transparent via-[#BEA365] to-transparent opacity-30" />
             </div>
           </motion.div>
         )}

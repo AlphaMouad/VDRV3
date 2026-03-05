@@ -28,7 +28,7 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
   const stats = [
     {
       label: t.common.statsRibbonMoic ?? "LP MOIC",
-      accent: "#C5A059",
+      accent: "#BEA365",
       content: (
         <span className="gold-text-gradient font-[var(--font-jetbrains)] font-bold tabular-nums"
           style={{ fontSize: "15px", letterSpacing: "-0.03em" }}>
@@ -38,10 +38,10 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
     },
     {
       label: t.common.statsRibbonIrr ?? "IRR Range",
-      accent: "#10B981",
+      accent: "#0F9D58",
       content: (
         <span className="font-[var(--font-jetbrains)] font-bold tabular-nums"
-          style={{ color: "#10B981", fontSize: "15px", letterSpacing: "-0.03em" }}>
+          style={{ color: "#0F9D58", fontSize: "15px", letterSpacing: "-0.03em" }}>
           <AnimatedValue value={baseIrr - 2} format="percent" decimals={0} />
           %–<AnimatedValue value={baseIrr + 2} format="percent" decimals={0} />%
         </span>
@@ -59,20 +59,20 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
     },
     {
       label: t.common.statsRibbonPeak ?? "Peak Equity",
-      accent: "#C5A059",
+      accent: "#BEA365",
       content: (
         <span className="font-[var(--font-jetbrains)] font-bold tabular-nums"
-          style={{ color: "#C5A059", fontSize: "15px", letterSpacing: "-0.03em" }}>
+          style={{ color: "#BEA365", fontSize: "15px", letterSpacing: "-0.03em" }}>
           €<AnimatedValue value={peakEquity} format="currency" />
         </span>
       ),
     },
     {
       label: t.common.statsRibbonBear ?? "Bear Floor",
-      accent: "#10B981",
+      accent: "#0F9D58",
       content: (
         <span className="font-[var(--font-jetbrains)] font-bold tabular-nums"
-          style={{ color: "#10B981", fontSize: "15px", letterSpacing: "-0.03em" }}>
+          style={{ color: "#0F9D58", fontSize: "15px", letterSpacing: "-0.03em" }}>
           <AnimatedValue value={bearYield.lpDividendYield} format="percent" decimals={1} />%
         </span>
       ),
@@ -91,7 +91,7 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
       <div style={{
         position: "absolute",
         top: 0, left: 0, right: 0, height: "1px",
-        background: "linear-gradient(90deg, transparent 0%, rgba(197,160,89,0.28) 20%, rgba(223,189,105,0.48) 50%, rgba(197,160,89,0.28) 80%, transparent 100%)",
+        background: "linear-gradient(90deg, transparent 0%, rgba(190,163,101,0.28) 20%, rgba(223,189,105,0.48) 50%, rgba(190,163,101,0.28) 80%, transparent 100%)",
       }} />
 
       {/* ── Mobile: swipeable horizontal strip ── */}

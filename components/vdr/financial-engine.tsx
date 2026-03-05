@@ -158,7 +158,7 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
       <Reveal delay={0.1}>
         <div className="glass-form p-6 mb-6">
           <div className="flex items-center gap-2 mb-1">
-            <ArrowDown style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+            <ArrowDown style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <span className="vdr-section-label">
               <Explain k="capital-call">{t.engine.capitalCallLabel}</Explain>
             </span>
@@ -170,14 +170,14 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {capitalCalls.map((call) => (
-              <div key={call.label} className="glass-form p-4 border-l-2 border-[#C5A059]">
+              <div key={call.label} className="glass-form p-4 border-l-2 border-[#BEA365]">
                 <p className="text-xs font-semibold text-[#ffffff] mb-1">
                   {call.label}
                 </p>
                 <p className="text-xs text-[#c0c0c0]">
                   {t.engine.call1Months.replace('{start}', String(call.startMonth)).replace('{end}', String(call.endMonth))}
                 </p>
-                <p className="font-mono text-lg text-[#C5A059] font-bold mt-2">
+                <p className="font-mono text-lg text-[#BEA365] font-bold mt-2">
                   {call.amount}% of GDC
                 </p>
                 <p className="font-mono text-xs text-[#c0c0c0]">
@@ -187,14 +187,14 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
             ))}
           </div>
 
-          <div className="glass-form p-4 mt-4 border-l-2 border-[#10B981]">
-            <p className="text-xs font-semibold text-[#10B981] mb-1">
+          <div className="glass-form p-4 mt-4 border-l-2 border-[#0F9D58]">
+            <p className="text-xs font-semibold text-[#0F9D58] mb-1">
               {t.engine.remainingLabel}
             </p>
             <p className="text-xs text-[#c0c0c0]">
               {t.engine.remainingDesc}
             </p>
-            <p className="font-mono text-lg text-[#10B981] font-bold mt-2">
+            <p className="font-mono text-lg text-[#0F9D58] font-bold mt-2">
               €{Math.round(totalGDC * 0.35).toLocaleString()} {t.engine.offset}
             </p>
           </div>
@@ -217,12 +217,12 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
             className="flex items-center gap-2 transition-colors duration-200"
           >
             {vefaOffset ? (
-              <ToggleRight className="w-10 h-10 text-[#10B981]" />
+              <ToggleRight className="w-10 h-10 text-[#0F9D58]" />
             ) : (
               <ToggleLeft className="w-10 h-10 text-[#c0c0c0]" />
             )}
             <span
-              className={`text-xs font-semibold ${vefaOffset ? "text-[#10B981]" : "text-[#c0c0c0]"}`}
+              className={`text-xs font-semibold ${vefaOffset ? "text-[#0F9D58]" : "text-[#c0c0c0]"}`}
             >
               {vefaOffset ? t.engine.on : t.engine.off}
             </span>
@@ -253,11 +253,11 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
             <span className="vdr-section-label">
               {t.engine.estimatedIrr}
             </span>
-            <p className={`font-mono text-2xl font-bold mt-1 ${vefaOffset ? "text-[#10B981]" : "text-[#C5A059]"}`}>
+            <p className={`font-mono text-2xl font-bold mt-1 ${vefaOffset ? "text-[#0F9D58]" : "text-[#BEA365]"}`}>
               {irrRange}
             </p>
             {vefaOffset && (
-              <p className="text-xs text-[#10B981] mt-0.5">
+              <p className="text-xs text-[#0F9D58] mt-0.5">
                 <Zap className="w-3 h-3 inline" /> {t.engine.leveragedTier}
               </p>
             )}
@@ -292,7 +292,7 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
                 <Tooltip
                   contentStyle={{
                     background: "rgba(10,10,10,0.95)",
-                    border: "1px solid rgba(255,255,255,0.12)",
+                    border: "1px solid rgba(190, 163, 101, 0.3)", boxShadow: "0 4px 20px rgba(0,0,0,0.8)", backdropFilter: "blur(8px)",
                     borderRadius: 8,
                     color: "#fff",
                     fontFamily: "var(--font-jetbrains)",
@@ -324,17 +324,17 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
                 <Area
                   type="monotone"
                   dataKey="cumulativeOutflow"
-                  fill="rgba(239,68,68,0.12)"
-                  stroke="#EF4444"
+                  fill="rgba(211,47,47,0.12)"
+                  stroke="#D32F2F"
                   strokeWidth={2}
                   animationDuration={800}
                   animationEasing="ease-out"
                 />
-                <Bar dataKey="vefaInflow" fill="#10B981" radius={[3, 3, 0, 0]} barSize={10} animationDuration={800} animationEasing="ease-out" />
+                <Bar dataKey="vefaInflow" fill="#0F9D58" radius={[3, 3, 0, 0]} barSize={10} animationDuration={800} animationEasing="ease-out" />
                 <Line
                   type="monotone"
                   dataKey="netBalance"
-                  stroke="#C5A059"
+                  stroke="#BEA365"
                   strokeWidth={2.5}
                   dot={false}
                   animationDuration={800}
@@ -382,7 +382,7 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
                 {vefaMilestoneMonths.map((ms) => (
                   <tr
                     key={ms.label}
-                    className="border-b border-[rgba(255,255,255,0.04)] hover:bg-[rgba(197,160,89,0.04)] transition-colors"
+                    className="border-b border-[rgba(255,255,255,0.04)] hover:bg-[rgba(190,163,101,0.04)] transition-colors"
                   >
                     <td className="font-mono text-sm text-[#ffffff] py-3 px-3">
                       {ms.month}
@@ -390,7 +390,7 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
                     <td className="text-sm text-[#ffffff] py-3 px-3">
                       {ms.label}
                     </td>
-                    <td className="font-mono text-sm text-[#10B981] py-3 px-3 text-right">
+                    <td className="font-mono text-sm text-[#0F9D58] py-3 px-3 text-right">
                       {ms.pct}%
                     </td>
                     <td className="font-mono text-sm text-[#ffffff] py-3 px-3 text-right">
@@ -400,13 +400,13 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
                 ))}
                 <tr className="border-t border-[rgba(255,255,255,0.12)]">
                   <td className="py-3 px-3" />
-                  <td className="text-sm font-semibold text-[#C5A059] py-3 px-3">
+                  <td className="text-sm font-semibold text-[#BEA365] py-3 px-3">
                     {t.engine.totalVefaRevenue}
                   </td>
-                  <td className="font-mono text-sm font-bold text-[#10B981] py-3 px-3 text-right">
+                  <td className="font-mono text-sm font-bold text-[#0F9D58] py-3 px-3 text-right">
                     100%
                   </td>
-                  <td className="font-mono text-sm font-bold text-[#C5A059] py-3 px-3 text-right">
+                  <td className="font-mono text-sm font-bold text-[#BEA365] py-3 px-3 text-right">
                     €{totalGDV.toLocaleString()}
                   </td>
                 </tr>

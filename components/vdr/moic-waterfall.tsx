@@ -145,7 +145,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
       {/* Halal Badge */}
       <Reveal delay={0.1}>
         <div className="flex justify-center mb-6">
-          <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full border border-[#10B981] text-[#10B981]">
+          <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full border border-[#0F9D58] text-[#0F9D58]">
             <Sparkles className="w-3 h-3" />
             <Explain k="musharakah">{w.halalBadge}</Explain>
           </span>
@@ -155,25 +155,25 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
       {/* Tier Explanation Cards */}
       <Reveal delay={0.15}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-          <div className="glass-form p-4 border-l-2 border-[#EF4444]">
+          <div className="glass-form p-4 border-l-2 border-[#D32F2F]">
             <div className="flex items-center gap-2 mb-2">
-              <AlertTriangle className="w-3 h-3 text-[#EF4444]" />
-              <span className="text-[11px] tracking-[0.18em] uppercase text-[#EF4444] font-bold">{w.tier0Label}</span>
+              <AlertTriangle className="w-3 h-3 text-[#D32F2F]" />
+              <span className="text-[11px] tracking-[0.18em] uppercase text-[#D32F2F] font-bold">{w.tier0Label}</span>
             </div>
             <p className="text-xs text-[#ffffff] font-semibold mb-1">{w.tier0Title}</p>
             <p className="text-xs text-[#c0c0c0] leading-relaxed">{w.tier0Desc}</p>
           </div>
-          <div className="glass-form p-4 border-l-2 border-[#C5A059]">
+          <div className="glass-form p-4 border-l-2 border-[#BEA365]">
             <div className="flex items-center gap-2 mb-2">
-              <ShieldCheck className="w-3 h-3 text-[#C5A059]" />
-              <span className="text-[11px] tracking-[0.18em] uppercase text-[#C5A059] font-bold">{w.tier1Label}</span>
+              <ShieldCheck className="w-3 h-3 text-[#BEA365]" />
+              <span className="text-[11px] tracking-[0.18em] uppercase text-[#BEA365] font-bold">{w.tier1Label}</span>
             </div>
             <p className="text-xs text-[#ffffff] font-semibold mb-1">{w.tier1Title}</p>
             <p className="text-xs text-[#c0c0c0] leading-relaxed">{w.tier1Desc}</p>
           </div>
-          <div className="glass-form p-4 border-l-2 border-[#10B981]">
+          <div className="glass-form p-4 border-l-2 border-[#0F9D58]">
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-[11px] tracking-[0.18em] uppercase text-[#10B981] font-bold">{w.tier2Label}</span>
+              <span className="text-[11px] tracking-[0.18em] uppercase text-[#0F9D58] font-bold">{w.tier2Label}</span>
             </div>
             <p className="text-xs text-[#ffffff] font-semibold mb-1">{w.tier2Title}</p>
             <p className="text-xs text-[#c0c0c0] leading-relaxed">{w.tier2Desc}</p>
@@ -206,7 +206,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
               <p className="vdr-section-label mb-1">
                 {w.lpMoicLabel}
               </p>
-              <p className={`font-mono text-xl sm:text-2xl md:text-3xl font-bold ${result.isLoss ? "text-[#EF4444]" : "text-[#10B981]"}`}>
+              <p className={`font-mono text-xl sm:text-2xl md:text-3xl font-bold ${result.isLoss ? "text-[#D32F2F]" : "text-[#0F9D58]"}`}>
                 {result.lpMOIC.toFixed(2)}x
               </p>
             </div>
@@ -231,7 +231,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
               <span className="text-[11px] tracking-[0.15em] uppercase text-[#c4c4c4]">
                 <Explain k="tpi">{w.tpiTaxLabel}</Explain> ({macro.tpiRate}%)
               </span>
-              <p className="font-mono text-sm text-[#EF4444] font-bold">
+              <p className="font-mono text-sm text-[#D32F2F] font-bold">
                 -€{Math.round(result.tpiTax).toLocaleString()}
               </p>
             </div>
@@ -248,10 +248,10 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
       {/* Loss Warning */}
       {result.isLoss && (
         <Reveal delay={0.25}>
-          <div className="glass-form p-4 mb-6 border border-[#EF4444] flex items-center gap-3">
-            <AlertTriangle className="w-5 h-5 text-[#EF4444] shrink-0" />
+          <div className="glass-form p-4 mb-6 border border-[#D32F2F] flex items-center gap-3">
+            <AlertTriangle className="w-5 h-5 text-[#D32F2F] shrink-0" />
             <div>
-              <p className="text-sm font-semibold text-[#EF4444]">{w.lossScenarioTitle}</p>
+              <p className="text-sm font-semibold text-[#D32F2F]">{w.lossScenarioTitle}</p>
               <p className="text-xs text-[#c0c0c0]">{w.lossScenarioDesc}</p>
             </div>
           </div>
@@ -289,7 +289,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                 <Tooltip
                   contentStyle={{
                     background: "rgba(10,10,10,0.95)",
-                    border: "1px solid rgba(255,255,255,0.12)",
+                    border: "1px solid rgba(190, 163, 101, 0.3)", boxShadow: "0 4px 20px rgba(0,0,0,0.8)", backdropFilter: "blur(8px)",
                     borderRadius: 8,
                     color: "#fff",
                     fontFamily: "var(--font-jetbrains)",
@@ -308,12 +308,12 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                 />
                 <Bar dataKey="lp" stackId="a" radius={[0, 0, 0, 0]} barSize={40} animationDuration={800} animationEasing="ease-out">
                   {chartData.map((_, index) => (
-                    <Cell key={`lp-${index}`} fill="#C5A059" />
+                    <Cell key={`lp-${index}`} fill="#BEA365" />
                   ))}
                 </Bar>
                 <Bar dataKey="gp" stackId="a" radius={[3, 3, 0, 0]} barSize={40} animationDuration={800} animationEasing="ease-out">
                   {chartData.map((_, index) => (
-                    <Cell key={`gp-${index}`} fill="rgba(197,160,89,0.35)" />
+                    <Cell key={`gp-${index}`} fill="rgba(190,163,101,0.35)" />
                   ))}
                 </Bar>
               </BarChart>
@@ -345,9 +345,9 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
               <tbody>
                 {result.isLoss ? (
                   <tr className="border-b border-[rgba(255,255,255,0.04)]">
-                    <td className="text-sm text-[#EF4444] py-3 px-3">{w.lossProvision}</td>
+                    <td className="text-sm text-[#D32F2F] py-3 px-3">{w.lossProvision}</td>
                     <td className="text-sm text-[#c0c0c0] py-3 px-3">90/10</td>
-                    <td className="font-mono text-sm text-[#EF4444] py-3 px-3 text-right">
+                    <td className="font-mono text-sm text-[#D32F2F] py-3 px-3 text-right">
                       €{Math.round(result.tier0LP).toLocaleString()}
                     </td>
                     <td className="font-mono text-sm text-[#c0c0c0] py-3 px-3 text-right">
@@ -359,7 +359,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                     <tr className="border-b border-[rgba(255,255,255,0.04)]">
                       <td className="text-sm text-[#ffffff] py-3 px-3">{w.returnOfCapital}</td>
                       <td className="text-sm text-[#c0c0c0] py-3 px-3">90/10</td>
-                      <td className="font-mono text-sm text-[#10B981] py-3 px-3 text-right">
+                      <td className="font-mono text-sm text-[#0F9D58] py-3 px-3 text-right">
                         €{Math.round(result.tier1LP).toLocaleString()}
                       </td>
                       <td className="font-mono text-sm text-[#c0c0c0] py-3 px-3 text-right">
@@ -369,7 +369,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                     <tr className="border-b border-[rgba(255,255,255,0.04)]">
                       <td className="text-sm text-[#ffffff] py-3 px-3">{w.alignmentPhase}</td>
                       <td className="text-sm text-[#c0c0c0] py-3 px-3">80/20</td>
-                      <td className="font-mono text-sm text-[#10B981] py-3 px-3 text-right">
+                      <td className="font-mono text-sm text-[#0F9D58] py-3 px-3 text-right">
                         €{Math.round(result.tier2LP).toLocaleString()}
                       </td>
                       <td className="font-mono text-sm text-[#c0c0c0] py-3 px-3 text-right">
@@ -379,7 +379,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                     <tr className="border-b border-[rgba(255,255,255,0.04)]">
                       <td className="text-sm text-[#ffffff] py-3 px-3">{w.gpPromote}</td>
                       <td className="text-sm text-[#c0c0c0] py-3 px-3">60/40</td>
-                      <td className="font-mono text-sm text-[#10B981] py-3 px-3 text-right">
+                      <td className="font-mono text-sm text-[#0F9D58] py-3 px-3 text-right">
                         €{Math.round(result.tier3LP).toLocaleString()}
                       </td>
                       <td className="font-mono text-sm text-[#c0c0c0] py-3 px-3 text-right">
@@ -389,11 +389,11 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                   </>
                 )}
                 <tr className="border-t border-[rgba(255,255,255,0.12)]">
-                  <td className="text-sm font-bold text-[#C5A059] py-3 px-3" colSpan={2}>{w.total}</td>
-                  <td className="font-mono text-sm font-bold text-[#10B981] py-3 px-3 text-right">
+                  <td className="text-sm font-bold text-[#BEA365] py-3 px-3" colSpan={2}>{w.total}</td>
+                  <td className="font-mono text-sm font-bold text-[#0F9D58] py-3 px-3 text-right">
                     €{Math.round(result.totalLP).toLocaleString()}
                   </td>
-                  <td className="font-mono text-sm font-bold text-[#C5A059] py-3 px-3 text-right">
+                  <td className="font-mono text-sm font-bold text-[#BEA365] py-3 px-3 text-right">
                     €{Math.round(result.totalGP).toLocaleString()}
                   </td>
                 </tr>
@@ -405,7 +405,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
           <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="glass-form px-4 py-3">
               <p className="vdr-section-label mb-1">{w.lpMoic}</p>
-              <p className={`font-mono text-xl font-bold ${result.isLoss ? "text-[#EF4444]" : "text-[#10B981]"}`}>
+              <p className={`font-mono text-xl font-bold ${result.isLoss ? "text-[#D32F2F]" : "text-[#0F9D58]"}`}>
                 {result.lpMOIC.toFixed(2)}x
               </p>
             </div>
@@ -423,14 +423,14 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
             </div>
             <div className="glass-form px-4 py-3">
               <p className="vdr-section-label mb-1">{w.netLpProfit}</p>
-              <p className="font-mono text-xl font-bold text-[#10B981]">
+              <p className="font-mono text-xl font-bold text-[#0F9D58]">
                 €{Math.round(Math.max(0, result.totalLP - lpCommitment)).toLocaleString()}
               </p>
             </div>
           </div>
 
           {/* The Pitch */}
-          <div className="mt-6 glass-form p-4 border-l-2 border-[#C5A059]">
+          <div className="mt-6 glass-form p-4 border-l-2 border-[#BEA365]">
             <p className="text-sm italic text-[#c0c0c0] leading-relaxed">
               {w.pitchQuote}
             </p>

@@ -92,9 +92,9 @@ export function Fortress({ macro, t, locale }: FortressProps) {
   }, [adr, occupancy, macro, totalGDC])
 
   const yieldBreakdownData = [
-    { name: fv.grossRevenue, value: hospitality.grossRev, fill: "#C5A059" },
-    { name: `${fv.opexLabel} (${macro.opexRatio}%)`, value: hospitality.grossRev * hospitality.opexRatio, fill: "#EF4444" },
-    { name: fv.noiLabel, value: hospitality.noi, fill: "#10B981" },
+    { name: fv.grossRevenue, value: hospitality.grossRev, fill: "#BEA365" },
+    { name: `${fv.opexLabel} (${macro.opexRatio}%)`, value: hospitality.grossRev * hospitality.opexRatio, fill: "#D32F2F" },
+    { name: fv.noiLabel, value: hospitality.noi, fill: "#0F9D58" },
   ]
 
   return (
@@ -108,7 +108,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
       {/* Zero Debt Badge */}
       <Reveal delay={0.05}>
         <div className="flex justify-center mb-6">
-          <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full border border-[#C5A059] text-[#C5A059]">
+          <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase px-4 py-2 rounded-full border border-[#BEA365] text-[#BEA365]">
             <Lock className="w-3 h-3" />
             {fv.zeroDebtBadge}
           </span>
@@ -123,7 +123,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
               onClick={() => setIsBearCase(false)}
               className={`flex-1 py-3 sm:py-3 rounded-lg text-center text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${
                 !isBearCase
-                  ? "bg-[rgba(197,160,89,0.15)] text-[#C5A059] border border-[#C5A059]"
+                  ? "bg-[rgba(190,163,101,0.15)] text-[#BEA365] border border-[#BEA365]"
                   : "text-[#c0c0c0] border border-[rgba(255,255,255,0.08)] hover:text-[#ffffff] hover:border-[rgba(255,255,255,0.16)]"
               }`}
             >
@@ -134,7 +134,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
               onClick={() => setIsBearCase(true)}
               className={`flex-1 py-3 sm:py-3 rounded-lg text-center text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 ${
                 isBearCase
-                  ? "bg-[rgba(239,68,68,0.1)] text-[#EF4444] border border-[#EF4444]"
+                  ? "bg-[rgba(211,47,47,0.1)] text-[#D32F2F] border border-[#D32F2F]"
                   : "text-[#c0c0c0] border border-[rgba(255,255,255,0.08)] hover:text-[#ffffff] hover:border-[rgba(255,255,255,0.16)]"
               }`}
             >
@@ -150,7 +150,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
         <Reveal delay={0.2}>
           <div className="glass-form p-6">
             <div className="flex items-center gap-2 mb-4">
-              <TrendingUp style={{ width: "13px", height: "13px", color: "#10B981", flexShrink: 0 }} />
+              <TrendingUp style={{ width: "13px", height: "13px", color: "#0F9D58", flexShrink: 0 }} />
               <span className="vdr-section-label">
                 {fv.baseCaseLabel}
               </span>
@@ -180,7 +180,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                 <p className="vdr-section-label mb-2">
                   {fv.grossProfitLabel}
                 </p>
-                <p className="text-[#10B981] font-mono text-2xl font-bold">
+                <p className="text-[#0F9D58] font-mono text-2xl font-bold">
                   €{(totalGDV - totalGDC).toLocaleString()}
                 </p>
               </div>
@@ -201,7 +201,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
           <Reveal delay={0.2}>
             <div className="glass-form p-6 mb-6">
               <div className="flex items-center gap-2 mb-1">
-                <Building2 style={{ width: "13px", height: "13px", color: "#EF4444", flexShrink: 0 }} />
+                <Building2 style={{ width: "13px", height: "13px", color: "#D32F2F", flexShrink: 0 }} />
                 <span className="vdr-section-label">
                   {fv.bearCaseLabel}
                 </span>
@@ -232,7 +232,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                     <p className="vdr-section-label">
                       <Explain k="adr">{fv.adrLabel}</Explain>
                     </p>
-                    <p className="font-mono text-sm text-[#C5A059]">
+                    <p className="font-mono text-sm text-[#BEA365]">
                       €{adr}
                     </p>
                   </div>
@@ -255,7 +255,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                     <p className="vdr-section-label">
                       <Explain k="occupancy-rate">{fv.occupancyLabel}</Explain>
                     </p>
-                    <p className="font-mono text-sm text-[#C5A059]">
+                    <p className="font-mono text-sm text-[#BEA365]">
                       {occupancy}%
                     </p>
                   </div>
@@ -280,7 +280,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                 <p className="vdr-section-label mb-2">
                   <Explain k="ijarah">{fv.annualCashDividend}</Explain>
                 </p>
-                <p className={`font-mono text-3xl sm:text-5xl font-bold ${hospitality.yieldPct >= 7 ? "text-[#10B981]" : "text-[#C5A059]"}`}>
+                <p className={`font-mono text-3xl sm:text-5xl font-bold ${hospitality.yieldPct >= 7 ? "text-[#0F9D58]" : "text-[#BEA365]"}`}>
                   {hospitality.yieldPct.toFixed(2)}%
                 </p>
                 <p className="text-[#c0c0c0] text-xs mt-2">
@@ -305,7 +305,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                   <p className="vdr-section-label mb-1">
                     {fv.opexLabel} ({macro.opexRatio}%)
                   </p>
-                  <p className="font-mono text-lg text-[#EF4444] font-bold">
+                  <p className="font-mono text-lg text-[#D32F2F] font-bold">
                     -€{Math.round(hospitality.grossRev * hospitality.opexRatio).toLocaleString()}
                   </p>
                 </div>
@@ -313,7 +313,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                   <p className="vdr-section-label mb-1">
                     <Explain k="noi">{fv.noiLabel}</Explain>
                   </p>
-                  <p className="font-mono text-lg text-[#10B981] font-bold">
+                  <p className="font-mono text-lg text-[#0F9D58] font-bold">
                     €{Math.round(hospitality.noi).toLocaleString()}
                   </p>
                 </div>
@@ -321,7 +321,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                   <p className="vdr-section-label mb-1">
                     {fv.lpAnnualDividend}
                   </p>
-                  <p className="font-mono text-lg text-[#C5A059] font-bold">
+                  <p className="font-mono text-lg text-[#BEA365] font-bold">
                     €{Math.round(hospitality.lpAnnualDividend).toLocaleString()}
                   </p>
                 </div>
@@ -359,7 +359,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                     <Tooltip
                       contentStyle={{
                         background: "rgba(10,10,10,0.95)",
-                        border: "1px solid rgba(255,255,255,0.12)",
+                        border: "1px solid rgba(190, 163, 101, 0.3)", boxShadow: "0 4px 20px rgba(0,0,0,0.8)", backdropFilter: "blur(8px)",
                         borderRadius: 8,
                         color: "#fff",
                         fontFamily: "var(--font-jetbrains)",
@@ -421,7 +421,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                     <Tooltip
                       contentStyle={{
                         background: "rgba(10,10,10,0.95)",
-                        border: "1px solid rgba(255,255,255,0.12)",
+                        border: "1px solid rgba(190, 163, 101, 0.3)", boxShadow: "0 4px 20px rgba(0,0,0,0.8)", backdropFilter: "blur(8px)",
                         borderRadius: 8,
                         color: "#fff",
                         fontFamily: "var(--font-jetbrains)",
@@ -432,18 +432,18 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                         return [`${value}%`, fv.yieldLegend]
                       }}
                     />
-                    <Line yAxisId="noi" type="monotone" dataKey="noi" stroke="#10B981" strokeWidth={2} dot={{ r: 3, fill: "#10B981" }} animationDuration={800} animationEasing="ease-out" />
-                    <Line yAxisId="yield" type="monotone" dataKey="yield" stroke="#C5A059" strokeWidth={2} dot={{ r: 3, fill: "#C5A059" }} animationDuration={800} animationEasing="ease-out" />
+                    <Line yAxisId="noi" type="monotone" dataKey="noi" stroke="#0F9D58" strokeWidth={2} dot={{ r: 3, fill: "#0F9D58" }} animationDuration={800} animationEasing="ease-out" />
+                    <Line yAxisId="yield" type="monotone" dataKey="yield" stroke="#BEA365" strokeWidth={2} dot={{ r: 3, fill: "#BEA365" }} animationDuration={800} animationEasing="ease-out" />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
               <div className="flex items-center gap-6 mt-3 justify-center">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-0.5 bg-[#10B981]" />
+                  <span className="w-3 h-0.5 bg-[#0F9D58]" />
                   <span className="text-xs text-[#c0c0c0]">{fv.noiLegend}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-0.5 bg-[#C5A059]" />
+                  <span className="w-3 h-0.5 bg-[#BEA365]" />
                   <span className="text-xs text-[#c0c0c0]">{fv.yieldLegend}</span>
                 </div>
               </div>
