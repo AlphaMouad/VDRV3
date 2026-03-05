@@ -83,8 +83,8 @@ function SliderRow({
     <div className="flex flex-col gap-2 py-4 border-b border-[rgba(255,255,255,0.04)] last:border-b-0">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-md glass-form flex items-center justify-center shrink-0 border border-[rgba(212,175,55,0.2)]">
-            <Icon className="w-4 h-4 text-[#D4AF37]" />
+          <div className="w-8 h-8 rounded-md glass-form flex items-center justify-center shrink-0 border border-[rgba(190,163,101,0.2)]">
+            <Icon className="w-4 h-4 text-[#BEA365]" />
           </div>
           <div>
             <p className="text-sm text-[#ffffff]">{label}</p>
@@ -93,7 +93,7 @@ function SliderRow({
             )}
           </div>
         </div>
-        <span className="font-mono text-sm text-[#D4AF37] font-semibold min-w-[80px] text-right">
+        <span className="font-mono text-sm text-[#BEA365] font-semibold min-w-[80px] text-right">
           {fmt(value)}
         </span>
       </div>
@@ -164,31 +164,31 @@ export function MacroAssumptions({ macro, onChange, t, locale }: MacroAssumption
 
       {/* Fixed Project Parameters (Read-Only) */}
       <Reveal delay={0.15}>
-        <div className="glass-form p-6 mb-6 border border-[rgba(212,175,55,0.15)]">
+        <div className="glass-form p-6 mb-6 border border-[rgba(190,163,101,0.15)]">
           <div className="flex items-center gap-2 mb-4">
-            <Lock style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
+            <Lock style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h3 className="vdr-section-label">
               {t.macroView.projectParams}
             </h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-            <div className="glass-form p-4 border border-[rgba(212,175,55,0.1)]">
+            <div className="glass-form p-4 border border-[rgba(190,163,101,0.1)]">
               <div className="flex items-center gap-2 mb-2">
-                <Building2 className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <Building2 className="w-3.5 h-3.5 text-[#BEA365]" />
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[#c0c0c0]">{t.macroView.totalVillas}</p>
               </div>
               <p className="gold-text-gradient font-mono text-2xl font-bold">{macro.totalVillas}</p>
               <p className="text-xs text-[#c0c0c0] mt-1">{t.macroView.totalVillasSub}</p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(212,175,55,0.1)]">
+            <div className="glass-form p-4 border border-[rgba(190,163,101,0.1)]">
               <div className="flex items-center gap-2 mb-2">
-                <Banknote className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <Banknote className="w-3.5 h-3.5 text-[#BEA365]" />
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[#c0c0c0]">{t.macroView.gdcPerVilla}</p>
               </div>
               <p className="gold-text-gradient font-mono text-2xl font-bold">€{macro.gdcPerVilla.toLocaleString()}</p>
               <p className="text-xs text-[#c0c0c0] mt-1">{t.macroView.gdcPerVillaSub}</p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(212,175,55,0.1)]">
+            <div className="glass-form p-4 border border-[rgba(190,163,101,0.1)]">
               <div className="flex items-center gap-2 mb-2">
                 <Banknote className="w-3.5 h-3.5 text-[#10B981]" />
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[#c0c0c0]">{t.macroView.avgVillaGdv}</p>
@@ -204,7 +204,7 @@ export function MacroAssumptions({ macro, onChange, t, locale }: MacroAssumption
       <Reveal delay={0.2}>
         <div className="glass-form p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <Settings2 style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
+            <Settings2 style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h3 className="vdr-section-label">
               {t.macroView.projectParams}
             </h3>
@@ -217,7 +217,7 @@ export function MacroAssumptions({ macro, onChange, t, locale }: MacroAssumption
       <Reveal delay={0.3}>
         <div className="glass-form p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <Percent style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
+            <Percent style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h3 className="vdr-section-label">
               {t.macroView.vefaSchedule}
             </h3>
@@ -237,7 +237,7 @@ export function MacroAssumptions({ macro, onChange, t, locale }: MacroAssumption
       <Reveal delay={0.4}>
         <div className="glass-form p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <Percent style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
+            <Percent style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h3 className="vdr-section-label">
               {t.macroView.taxOpex}
             </h3>
@@ -251,7 +251,7 @@ export function MacroAssumptions({ macro, onChange, t, locale }: MacroAssumption
       <Reveal delay={0.5}>
         <div className="glass-form p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <Globe style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
+            <Globe style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h3 className="vdr-section-label">
               {t.macroView.fxRates}
             </h3>
@@ -267,9 +267,9 @@ export function MacroAssumptions({ macro, onChange, t, locale }: MacroAssumption
 
       {/* Syndication Parameters */}
       <Reveal delay={0.6}>
-        <div className="glass-form p-6 border border-[rgba(212,175,55,0.2)]">
+        <div className="glass-form p-6 border border-[rgba(190,163,101,0.2)]">
           <div className="flex items-center gap-2 mb-4">
-            <Users2 style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
+            <Users2 style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h3 className="vdr-section-label">
               {t.macroView.syndicationParams}
             </h3>

@@ -158,7 +158,7 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
       <Reveal delay={0.1}>
         <div className="glass-form p-6 mb-6">
           <div className="flex items-center gap-2 mb-1">
-            <ArrowDown style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
+            <ArrowDown style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <span className="vdr-section-label">
               <Explain k="capital-call">{t.engine.capitalCallLabel}</Explain>
             </span>
@@ -170,14 +170,14 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {capitalCalls.map((call) => (
-              <div key={call.label} className="glass-form p-4 border-l-2 border-[#D4AF37]">
+              <div key={call.label} className="glass-form p-4 border-l-2 border-[#BEA365]">
                 <p className="text-xs font-semibold text-[#ffffff] mb-1">
                   {call.label}
                 </p>
                 <p className="text-xs text-[#c0c0c0]">
                   {t.engine.call1Months.replace('{start}', String(call.startMonth)).replace('{end}', String(call.endMonth))}
                 </p>
-                <p className="font-mono text-lg text-[#D4AF37] font-bold mt-2">
+                <p className="font-mono text-lg text-[#BEA365] font-bold mt-2">
                   {call.amount}% of GDC
                 </p>
                 <p className="font-mono text-xs text-[#c0c0c0]">
@@ -253,7 +253,7 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
             <span className="vdr-section-label">
               {t.engine.estimatedIrr}
             </span>
-            <p className={`font-mono text-2xl font-bold mt-1 ${vefaOffset ? "text-[#10B981]" : "text-[#D4AF37]"}`}>
+            <p className={`font-mono text-2xl font-bold mt-1 ${vefaOffset ? "text-[#10B981]" : "text-[#BEA365]"}`}>
               {irrRange}
             </p>
             {vefaOffset && (
@@ -334,7 +334,7 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
                 <Line
                   type="monotone"
                   dataKey="netBalance"
-                  stroke="#D4AF37"
+                  stroke="#BEA365"
                   strokeWidth={2.5}
                   dot={false}
                   animationDuration={800}
@@ -382,7 +382,7 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
                 {vefaMilestoneMonths.map((ms) => (
                   <tr
                     key={ms.label}
-                    className="border-b border-[rgba(255,255,255,0.04)] hover:bg-[rgba(212,175,55,0.04)] transition-colors"
+                    className="border-b border-[rgba(255,255,255,0.04)] hover:bg-[rgba(190,163,101,0.04)] transition-colors"
                   >
                     <td className="font-mono text-sm text-[#ffffff] py-3 px-3">
                       {ms.month}
@@ -400,13 +400,13 @@ export function FinancialEngine({ macro, t, locale }: FinancialEngineProps) {
                 ))}
                 <tr className="border-t border-[rgba(255,255,255,0.12)]">
                   <td className="py-3 px-3" />
-                  <td className="text-sm font-semibold text-[#D4AF37] py-3 px-3">
+                  <td className="text-sm font-semibold text-[#BEA365] py-3 px-3">
                     {t.engine.totalVefaRevenue}
                   </td>
                   <td className="font-mono text-sm font-bold text-[#10B981] py-3 px-3 text-right">
                     100%
                   </td>
-                  <td className="font-mono text-sm font-bold text-[#D4AF37] py-3 px-3 text-right">
+                  <td className="font-mono text-sm font-bold text-[#BEA365] py-3 px-3 text-right">
                     €{totalGDV.toLocaleString()}
                   </td>
                 </tr>

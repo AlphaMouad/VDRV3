@@ -73,23 +73,23 @@ export function SidebarNav({ activeView, onNavigate, onLogout, onSecureAllocatio
           width: "38px", height: "38px",
           borderRadius: "9px",
           background: "rgba(6,6,6,0.97)",
-          border: "1px solid rgba(212,175,55,0.2)",
+          border: "1px solid rgba(190,163,101,0.2)",
           boxShadow: "0 2px 12px rgba(0,0,0,0.7)",
           transition: "border-color 0.2s, box-shadow 0.2s",
         }}
         onMouseEnter={e => {
-          (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(212,175,55,0.45)"
-          ;(e.currentTarget as HTMLButtonElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.7), 0 0 10px rgba(212,175,55,0.15)"
+          (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(190,163,101,0.45)"
+          ;(e.currentTarget as HTMLButtonElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.7), 0 0 10px rgba(190,163,101,0.15)"
         }}
         onMouseLeave={e => {
-          (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(212,175,55,0.2)"
+          (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(190,163,101,0.2)"
           ;(e.currentTarget as HTMLButtonElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.7)"
         }}
         aria-label="Toggle navigation"
       >
         {mobileOpen
-          ? <X className="w-[15px] h-[15px] text-[#D4AF37]" />
-          : <Menu className="w-[15px] h-[15px] text-[#D4AF37]" />}
+          ? <X className="w-[15px] h-[15px] text-[#BEA365]" />
+          : <Menu className="w-[15px] h-[15px] text-[#BEA365]" />}
       </button>
 
       {/* ── Mobile Overlay ── */}
@@ -128,7 +128,7 @@ export function SidebarNav({ activeView, onNavigate, onLogout, onSecureAllocatio
           {/* Gold hairline */}
           <div style={{
             height: "1px",
-            background: "linear-gradient(90deg, rgba(212,175,55,0.35) 0%, rgba(212,175,55,0.18) 60%, transparent 100%)",
+            background: "linear-gradient(90deg, rgba(190,163,101,0.35) 0%, rgba(190,163,101,0.18) 60%, transparent 100%)",
             marginBottom: "16px",
           }} />
           <p style={{
@@ -155,7 +155,7 @@ export function SidebarNav({ activeView, onNavigate, onLogout, onSecureAllocatio
             }}>
               {t.common.reviewProgress}
             </span>
-            <span style={{ fontFamily: "var(--font-jetbrains)", fontSize: "10px", color: "#D4AF37", fontWeight: 600 }}>
+            <span style={{ fontFamily: "var(--font-jetbrains)", fontSize: "10px", color: "#BEA365", fontWeight: 600 }}>
               {progressPct}%
             </span>
           </div>
@@ -168,7 +168,7 @@ export function SidebarNav({ activeView, onNavigate, onLogout, onSecureAllocatio
             <motion.div
               style={{
                 height: "100%",
-                background: "linear-gradient(90deg, #D4AF37, #DFBD69)",
+                background: "linear-gradient(90deg, #BEA365, #DFBD69)",
                 borderRadius: "1px",
               }}
               animate={{ width: `${progressPct}%` }}
@@ -199,13 +199,13 @@ export function SidebarNav({ activeView, onNavigate, onLogout, onSecureAllocatio
                 className={cn(
                   "relative flex items-center gap-3 w-full text-left rounded-lg transition-all duration-200",
                   isActive
-                    ? "text-[#D4AF37]"
+                    ? "text-[#BEA365]"
                     : "text-[#909090] hover:text-[#d8d8d8] hover:bg-[rgba(255,255,255,0.025)]"
                 )}
                 style={{
                   padding: "9px 12px 9px 14px",
-                  background: isActive ? "rgba(212,175,55,0.065)" : undefined,
-                  border: isActive ? "1px solid rgba(212,175,55,0.14)" : "1px solid transparent",
+                  background: isActive ? "rgba(190,163,101,0.065)" : undefined,
+                  border: isActive ? "1px solid rgba(190,163,101,0.14)" : "1px solid transparent",
                 }}
               >
                 {/* Active indicator bar */}
@@ -215,15 +215,15 @@ export function SidebarNav({ activeView, onNavigate, onLogout, onSecureAllocatio
                     className="absolute left-0 rounded-r"
                     style={{
                       top: "22%", bottom: "22%", width: "2.5px",
-                      background: "linear-gradient(180deg, #D4AF70, #D4AF37, #A87E2A)",
-                      boxShadow: "0 0 8px rgba(212,175,55,0.5)",
+                      background: "linear-gradient(180deg, #D4AF70, #BEA365, #A87E2A)",
+                      boxShadow: "0 0 8px rgba(190,163,101,0.5)",
                     }}
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
                 <Icon style={{
                   width: "13px", height: "13px", flexShrink: 0,
-                  color: isActive ? "#D4AF37" : "currentColor",
+                  color: isActive ? "#BEA365" : "currentColor",
                   opacity: isActive ? 1 : 0.65,
                 }} />
                 <span style={{
@@ -246,9 +246,9 @@ export function SidebarNav({ activeView, onNavigate, onLogout, onSecureAllocatio
             className="w-full group relative overflow-hidden rounded-[9px] flex items-center justify-center gap-2"
             style={{
               padding: "12px 16px",
-              background: "linear-gradient(135deg, #D4AF70 0%, #D4AF37 50%, #9A7B3E 100%)",
-              boxShadow: "0 0 24px rgba(212,175,55,0.28), 0 2px 8px rgba(0,0,0,0.5)",
-              border: "1px solid rgba(212,175,55,0.45)",
+              background: "linear-gradient(135deg, #D4AF70 0%, #BEA365 50%, #9A7B3E 100%)",
+              boxShadow: "0 0 24px rgba(190,163,101,0.28), 0 2px 8px rgba(0,0,0,0.5)",
+              border: "1px solid rgba(190,163,101,0.45)",
             }}
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/22 to-transparent" />

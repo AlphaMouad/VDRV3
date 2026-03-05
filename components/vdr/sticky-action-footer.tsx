@@ -64,22 +64,22 @@ export function StickyActionFooter({ t, locale, onNavigate, activeView, account 
       style={{
         background: "rgba(2,2,2,0.99)",
         borderTop: "1px solid rgba(255,255,255,0.038)",
-        boxShadow: "0 -20px 52px -10px rgba(0,0,0,0.98), 0 -1px 0 rgba(212,175,55,0.06)",
+        boxShadow: "0 -20px 52px -10px rgba(0,0,0,0.98), 0 -1px 0 rgba(190,163,101,0.06)",
       }}
     >
       {/* Gold hairline top */}
       <div style={{
         position: "absolute",
         top: 0, left: 0, right: 0, height: "1px",
-        background: "linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.15) 30%, rgba(212,175,55,0.28) 50%, rgba(212,175,55,0.15) 70%, transparent 100%)",
+        background: "linear-gradient(90deg, transparent 0%, rgba(190,163,101,0.15) 30%, rgba(190,163,101,0.28) 50%, rgba(190,163,101,0.15) 70%, transparent 100%)",
       }} />
 
       {/* ── Left: Activity Label ── */}
       <div className="hidden sm:flex items-center gap-2.5 shrink-0 mr-5">
         <span style={{
           display: "inline-block", width: "4px", height: "4px",
-          borderRadius: "50%", background: "#D4AF37",
-          boxShadow: "0 0 7px rgba(212,175,55,0.75)", flexShrink: 0,
+          borderRadius: "50%", background: "#BEA365",
+          boxShadow: "0 0 7px rgba(190,163,101,0.75)", flexShrink: 0,
         }} />
         <span
           className="font-[var(--font-jetbrains)] uppercase"
@@ -104,8 +104,8 @@ export function StickyActionFooter({ t, locale, onNavigate, activeView, account 
             <div key={i} className="flex items-center gap-2.5">
               <span style={{
                 width: "2px", height: "2px", borderRadius: "50%",
-                background: "rgba(212,175,55,0.45)", flexShrink: 0,
-                boxShadow: "0 0 4px rgba(212,175,55,0.4)",
+                background: "rgba(190,163,101,0.45)", flexShrink: 0,
+                boxShadow: "0 0 4px rgba(190,163,101,0.4)",
                 display: "inline-block",
               }} />
               <span
@@ -130,16 +130,16 @@ export function StickyActionFooter({ t, locale, onNavigate, activeView, account 
         style={{
           borderRadius: "8px",
           padding: "10px 18px",
-          background: "linear-gradient(135deg, #D4AF70 0%, #D4AF37 45%, #9A7B3E 100%)",
-          border: "1px solid rgba(212,175,55,0.5)",
-          boxShadow: "0 0 18px rgba(212,175,55,0.25), 0 2px 8px rgba(0,0,0,0.5)",
+          background: "linear-gradient(135deg, #D4AF70 0%, #BEA365 45%, #9A7B3E 100%)",
+          border: "1px solid rgba(190,163,101,0.5)",
+          boxShadow: "0 0 18px rgba(190,163,101,0.25), 0 2px 8px rgba(0,0,0,0.5)",
         }}
         onMouseEnter={e => {
-          (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 28px rgba(212,175,55,0.4), 0 4px 16px rgba(0,0,0,0.6)"
+          (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 28px rgba(190,163,101,0.4), 0 4px 16px rgba(0,0,0,0.6)"
           ;(e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)"
         }}
         onMouseLeave={e => {
-          (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 18px rgba(212,175,55,0.25), 0 2px 8px rgba(0,0,0,0.5)"
+          (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 18px rgba(190,163,101,0.25), 0 2px 8px rgba(0,0,0,0.5)"
           ;(e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)"
         }}
       >

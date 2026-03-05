@@ -163,10 +163,10 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
             <p className="text-xs text-[#ffffff] font-semibold mb-1">{w.tier0Title}</p>
             <p className="text-xs text-[#c0c0c0] leading-relaxed">{w.tier0Desc}</p>
           </div>
-          <div className="glass-form p-4 border-l-2 border-[#D4AF37]">
+          <div className="glass-form p-4 border-l-2 border-[#BEA365]">
             <div className="flex items-center gap-2 mb-2">
-              <ShieldCheck className="w-3 h-3 text-[#D4AF37]" />
-              <span className="text-[11px] tracking-[0.18em] uppercase text-[#D4AF37] font-bold">{w.tier1Label}</span>
+              <ShieldCheck className="w-3 h-3 text-[#BEA365]" />
+              <span className="text-[11px] tracking-[0.18em] uppercase text-[#BEA365] font-bold">{w.tier1Label}</span>
             </div>
             <p className="text-xs text-[#ffffff] font-semibold mb-1">{w.tier1Title}</p>
             <p className="text-xs text-[#c0c0c0] leading-relaxed">{w.tier1Desc}</p>
@@ -308,12 +308,12 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                 />
                 <Bar dataKey="lp" stackId="a" radius={[0, 0, 0, 0]} barSize={40} animationDuration={800} animationEasing="ease-out">
                   {chartData.map((_, index) => (
-                    <Cell key={`lp-${index}`} fill="#D4AF37" />
+                    <Cell key={`lp-${index}`} fill="#BEA365" />
                   ))}
                 </Bar>
                 <Bar dataKey="gp" stackId="a" radius={[3, 3, 0, 0]} barSize={40} animationDuration={800} animationEasing="ease-out">
                   {chartData.map((_, index) => (
-                    <Cell key={`gp-${index}`} fill="rgba(212,175,55,0.35)" />
+                    <Cell key={`gp-${index}`} fill="rgba(190,163,101,0.35)" />
                   ))}
                 </Bar>
               </BarChart>
@@ -389,11 +389,11 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                   </>
                 )}
                 <tr className="border-t border-[rgba(255,255,255,0.12)]">
-                  <td className="text-sm font-bold text-[#D4AF37] py-3 px-3" colSpan={2}>{w.total}</td>
+                  <td className="text-sm font-bold text-[#BEA365] py-3 px-3" colSpan={2}>{w.total}</td>
                   <td className="font-mono text-sm font-bold text-[#10B981] py-3 px-3 text-right">
                     €{Math.round(result.totalLP).toLocaleString()}
                   </td>
-                  <td className="font-mono text-sm font-bold text-[#D4AF37] py-3 px-3 text-right">
+                  <td className="font-mono text-sm font-bold text-[#BEA365] py-3 px-3 text-right">
                     €{Math.round(result.totalGP).toLocaleString()}
                   </td>
                 </tr>
@@ -430,7 +430,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
           </div>
 
           {/* The Pitch */}
-          <div className="mt-6 glass-form p-4 border-l-2 border-[#D4AF37]">
+          <div className="mt-6 glass-form p-4 border-l-2 border-[#BEA365]">
             <p className="text-sm italic text-[#c0c0c0] leading-relaxed">
               {w.pitchQuote}
             </p>

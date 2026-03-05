@@ -28,7 +28,7 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
   const stats = [
     {
       label: t.common.statsRibbonMoic ?? "LP MOIC",
-      accent: "#D4AF37",
+      accent: "#BEA365",
       content: (
         <span className="gold-text-gradient font-[var(--font-jetbrains)] font-bold tabular-nums"
           style={{ fontSize: "15px", letterSpacing: "-0.03em" }}>
@@ -59,10 +59,10 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
     },
     {
       label: t.common.statsRibbonPeak ?? "Peak Equity",
-      accent: "#D4AF37",
+      accent: "#BEA365",
       content: (
         <span className="font-[var(--font-jetbrains)] font-bold tabular-nums"
-          style={{ color: "#D4AF37", fontSize: "15px", letterSpacing: "-0.03em" }}>
+          style={{ color: "#BEA365", fontSize: "15px", letterSpacing: "-0.03em" }}>
           €<AnimatedValue value={peakEquity} format="currency" />
         </span>
       ),
@@ -91,7 +91,7 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
       <div style={{
         position: "absolute",
         top: 0, left: 0, right: 0, height: "1px",
-        background: "linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.28) 20%, rgba(223,189,105,0.48) 50%, rgba(212,175,55,0.28) 80%, transparent 100%)",
+        background: "linear-gradient(90deg, transparent 0%, rgba(190,163,101,0.28) 20%, rgba(223,189,105,0.48) 50%, rgba(190,163,101,0.28) 80%, transparent 100%)",
       }} />
 
       {/* ── Mobile: swipeable horizontal strip ── */}

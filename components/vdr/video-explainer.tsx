@@ -67,7 +67,7 @@ export function VideoExplainer({
       {hasVideo ? (
         <div
           className="glass-form p-1"
-          style={{ borderColor: "rgba(212,175,55,0.3)" }}
+          style={{ borderColor: "rgba(190,163,101,0.3)" }}
         >
           <div className="bunny-player-wrapper">
             <iframe
@@ -83,12 +83,12 @@ export function VideoExplainer({
         /* Elegant placeholder when no Bunny video is configured */
         <div
           className="glass-form p-1"
-          style={{ borderColor: "rgba(212,175,55,0.15)" }}
+          style={{ borderColor: "rgba(190,163,101,0.15)" }}
         >
-          <div className="bunny-player-wrapper flex items-center justify-center bg-[rgba(212,175,55,0.03)]">
+          <div className="bunny-player-wrapper flex items-center justify-center bg-[rgba(190,163,101,0.03)]">
             <div className="flex flex-col items-center gap-3 text-center px-6 absolute inset-0 justify-center">
-              <div className="w-14 h-14 rounded-full border border-[rgba(212,175,55,0.3)] flex items-center justify-center">
-                <Play className="w-6 h-6 text-[#D4AF37] ml-0.5" />
+              <div className="w-14 h-14 rounded-full border border-[rgba(190,163,101,0.3)] flex items-center justify-center">
+                <Play className="w-6 h-6 text-[#BEA365] ml-0.5" />
               </div>
               <p className="text-[11px] tracking-[0.2em] uppercase text-[#c0c0c0]">
                 Video Briefing

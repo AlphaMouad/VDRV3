@@ -28,8 +28,8 @@ function getCategoryInfo(type: VDRAccount["avatarType"], locale: Locale) {
         badge: "REPE", icon: TrendingUp, color: "#10B981",
         border: "rgba(16,185,129,0.35)", bg: "rgba(16,185,129,0.07)", glow: "rgba(16,185,129,0.15)" }
     case "FamilyOffice":
-      return { label: "Family Office", badge: "FO", icon: Building2, color: "#D4AF37",
-        border: "rgba(212,175,55,0.45)", bg: "rgba(212,175,55,0.08)", glow: "rgba(212,175,55,0.2)" }
+      return { label: "Family Office", badge: "FO", icon: Building2, color: "#BEA365",
+        border: "rgba(190,163,101,0.45)", bg: "rgba(190,163,101,0.08)", glow: "rgba(190,163,101,0.2)" }
     case "UHNWI":
       return { label: locale === "fr" ? "Ultra Haute Valeur Nette" : "Ultra High Net Worth",
         badge: "UHNWI", icon: Star, color: "#DFBD69",
@@ -47,9 +47,9 @@ function GoldGeometry() {
       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%"   stopColor="#D4AF37" stopOpacity="0"    />
-          <stop offset="50%"  stopColor="#D4AF37" stopOpacity="0.12" />
-          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0"    />
+          <stop offset="0%"   stopColor="#BEA365" stopOpacity="0"    />
+          <stop offset="50%"  stopColor="#BEA365" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="#BEA365" stopOpacity="0"    />
         </linearGradient>
         <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%"   stopColor="#DFBD69" stopOpacity="0"    />
@@ -57,9 +57,9 @@ function GoldGeometry() {
           <stop offset="100%" stopColor="#DFBD69" stopOpacity="0"    />
         </linearGradient>
         <linearGradient id="lgV" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%"   stopColor="#D4AF37" stopOpacity="0"    />
-          <stop offset="50%"  stopColor="#D4AF37" stopOpacity="0.05" />
-          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0"    />
+          <stop offset="0%"   stopColor="#BEA365" stopOpacity="0"    />
+          <stop offset="50%"  stopColor="#BEA365" stopOpacity="0.05" />
+          <stop offset="100%" stopColor="#BEA365" stopOpacity="0"    />
         </linearGradient>
       </defs>
       <line x1="-10%" y1="110%" x2="110%" y2="-10%" stroke="url(#lg1)" strokeWidth="1"   />
@@ -68,8 +68,8 @@ function GoldGeometry() {
       <line x1="-10%" y1="130%" x2="130%" y2="-10%" stroke="url(#lg2)" strokeWidth="0.6" />
       <line x1="33%"  y1="0%"   x2="33%"  y2="100%" stroke="url(#lgV)"             strokeWidth="1" />
       <line x1="67%"  y1="0%"   x2="67%"  y2="100%" stroke="url(#lgV)"             strokeWidth="1" />
-      <line x1="0%"   y1="33%"  x2="100%" y2="33%"  stroke="rgba(212,175,55,0.035)" strokeWidth="1" />
-      <line x1="0%"   y1="67%"  x2="100%" y2="67%"  stroke="rgba(212,175,55,0.035)" strokeWidth="1" />
+      <line x1="0%"   y1="33%"  x2="100%" y2="33%"  stroke="rgba(190,163,101,0.035)" strokeWidth="1" />
+      <line x1="0%"   y1="67%"  x2="100%" y2="67%"  stroke="rgba(190,163,101,0.035)" strokeWidth="1" />
     </svg>
   )
 }
@@ -118,15 +118,15 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
       value: "~15%",  color: "#10B981" },
     { label: locale === "fr" ? "MOIC LP Cible"           : "Target LP MOIC",
       sub:   locale === "fr" ? "Net de tous impôts marocains"     : "Net of all Moroccan taxes",
-      value: "1.52×", color: "#D4AF37" },
+      value: "1.52×", color: "#BEA365" },
     { label: locale === "fr" ? "Engagement LP · 90%"     : "LP Commitment · 90%",
       sub:   locale === "fr" ? "Appels échelonnés · Zéro levier"  : "Staged calls · Zero leverage",
       value: "€6.3M", color: "#e8e8e8" },
   ]
 
   const onFocus = (e: React.FocusEvent<HTMLInputElement>) => {
-    e.currentTarget.style.borderColor = "rgba(212,175,55,0.55)"
-    e.currentTarget.style.background  = "rgba(212,175,55,0.03)"
+    e.currentTarget.style.borderColor = "rgba(190,163,101,0.55)"
+    e.currentTarget.style.background  = "rgba(190,163,101,0.03)"
     e.currentTarget.style.boxShadow   = "none"
   }
   const onBlur = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -164,11 +164,11 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
               <div className="absolute pointer-events-none" style={{
                 top: "20%", left: "-12%",
                 width: "700px", height: "700px", borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(212,175,55,0.07) 0%, transparent 58%)",
+                background: "radial-gradient(circle, rgba(190,163,101,0.07) 0%, transparent 58%)",
               }} />
               <div className="absolute bottom-0 right-0 pointer-events-none" style={{
                 width: "220px", height: "220px",
-                background: "radial-gradient(circle at bottom right, rgba(212,175,55,0.08) 0%, transparent 70%)",
+                background: "radial-gradient(circle at bottom right, rgba(190,163,101,0.08) 0%, transparent 70%)",
               }} />
 
               {/* ── Single content block — everything in sequence ─────────── */}
@@ -216,7 +216,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                 <div className="flex items-center gap-3" style={{ marginBottom: "10px" }}>
                   <div style={{
                     width: "20px", height: "1px", flexShrink: 0,
-                    background: "linear-gradient(90deg, #D4AF37 0%, transparent 100%)",
+                    background: "linear-gradient(90deg, #BEA365 0%, transparent 100%)",
                   }} />
                   <p
                     className="font-[var(--font-jetbrains)] uppercase"
@@ -232,7 +232,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                   style={{
                     fontSize:      "10px",
                     letterSpacing: "0.14em",
-                    color:         "#D4AF37",
+                    color:         "#BEA365",
                     opacity:       0.85,
                     marginBottom:  "18px",
                   }}
@@ -245,7 +245,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                 {/* Prestige tagline */}
                 <p
                   className="font-[var(--font-playfair)] italic"
-                  style={{ fontSize: "13.5px", color: "#D4AF37", opacity: 0.72, lineHeight: 1.6, marginBottom: "32px" }}
+                  style={{ fontSize: "13.5px", color: "#BEA365", opacity: 0.72, lineHeight: 1.6, marginBottom: "32px" }}
                 >
                   {locale === "fr"
                     ? "« Là où la structure rencontre la souveraineté »"
@@ -257,7 +257,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                 <div className="flex items-center gap-2.5" style={{ marginBottom: "10px" }}>
                   <div style={{
                     width: "14px", height: "1px",
-                    background: "linear-gradient(90deg, rgba(212,175,55,0.6), transparent)",
+                    background: "linear-gradient(90deg, rgba(190,163,101,0.6), transparent)",
                   }} />
                   <span
                     className="font-[var(--font-jetbrains)] uppercase"
@@ -338,19 +338,19 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
             >
               {/* Hairline vertical grid */}
               <div className="absolute inset-0 pointer-events-none" style={{
-                backgroundImage: "repeating-linear-gradient(90deg, transparent 0, transparent 79px, rgba(212,175,55,0.012) 80px)",
+                backgroundImage: "repeating-linear-gradient(90deg, transparent 0, transparent 79px, rgba(190,163,101,0.012) 80px)",
               }} />
               {/* Single warm glow — upper right only */}
               <div className="absolute pointer-events-none" style={{
                 top: "8%", right: "-25%",
                 width: "480px", height: "480px", borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(212,175,55,0.048) 0%, transparent 60%)",
+                background: "radial-gradient(circle, rgba(190,163,101,0.048) 0%, transparent 60%)",
               }} />
 
               {/* Language toggle */}
               <button
                 onClick={onSwitchLocale}
-                className="absolute top-5 right-5 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass-form border border-[rgba(212,175,55,0.15)] hover:border-[rgba(212,175,55,0.4)] hover:text-[#D4AF37] transition-all duration-200"
+                className="absolute top-5 right-5 z-30 flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass-form border border-[rgba(190,163,101,0.15)] hover:border-[rgba(190,163,101,0.4)] hover:text-[#BEA365] transition-all duration-200"
                 style={{ color: "#a0a0a0", fontSize: "11px" }}
               >
                 <Globe className="w-3 h-3" />
@@ -360,59 +360,23 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
               </button>
 
               {/* ── Mobile brand hero — full luxury on small screens ── */}
-              <div className="lg:hidden flex flex-col items-center" style={{ marginBottom: "36px" }}>
+              <div className="lg:hidden flex flex-col items-center" style={{ marginBottom: "48px" }}>
 
                 {/* Logo */}
                 <img src="/amg-logo.svg" alt="AMG Building"
-                  style={{ height: "22px", display: "block", marginBottom: "18px" }} />
-
-                {/* Gold hairline */}
-                <div style={{
-                  width: "48px", height: "1px", marginBottom: "18px",
-                  background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.65), transparent)",
-                }} />
-
-                {/* Eyebrow */}
-                <p className="font-[var(--font-jetbrains)] uppercase text-center"
-                  style={{ fontSize: "9px", letterSpacing: "0.38em", color: "#a0a0a0", marginBottom: "12px" }}>
-                  {locale === "fr"
-                    ? "Résidentiel Exclusif · Palmeraie, Marrakech"
-                    : "Exclusive Residential · Palmeraie, Marrakech"}
-                </p>
+                  style={{ height: "22px", display: "block", marginBottom: "24px" }} />
 
                 {/* Headline */}
                 <h2 className="font-[var(--font-playfair)] text-white text-center"
-                  style={{ fontSize: "clamp(28px, 7.5vw, 36px)", letterSpacing: "-0.022em", lineHeight: 1.05, marginBottom: "10px" }}>
+                  style={{ fontSize: "clamp(32px, 8vw, 40px)", letterSpacing: "-0.022em", lineHeight: 1.05 }}>
                   Ambassadeur <span className="gold-text-gradient">6&amp;7</span>
                 </h2>
 
-                {/* Deal signature */}
+                {/* Location */}
                 <p className="font-[var(--font-jetbrains)] uppercase text-center"
-                  style={{ fontSize: "9px", letterSpacing: "0.14em", color: "rgba(212,175,55,0.78)", marginBottom: "22px" }}>
-                  {locale === "fr"
-                    ? "VEFA · Zéro Levier · Musharakah · Clôture Q4 2026"
-                    : "VEFA · Zero Leverage · Musharakah · Close Q4 2026"}
+                  style={{ fontSize: "10px", letterSpacing: "0.3em", color: "#a0a0a0", marginTop: "16px" }}>
+                  Palmeraie · Marrakech
                 </p>
-
-                {/* Mini stats bar */}
-                <div className="mobile-stats-bar" style={{ maxWidth: "308px" }}>
-                  {[
-                    { label: locale === "fr" ? "TRI Cible" : "Target IRR",     value: "~15%",  color: "#10B981" },
-                    { label: "LP MOIC",                                          value: "1.52×", color: "#D4AF37" },
-                    { label: locale === "fr" ? "Engagement LP" : "LP Commit",  value: "€6.3M", color: "#d0d0d0" },
-                  ].map(stat => (
-                    <div key={stat.label} className="mobile-stats-bar-item">
-                      <p className="font-[var(--font-jetbrains)] font-bold"
-                        style={{ color: stat.color, fontSize: "17px", letterSpacing: "-0.03em", lineHeight: 1, marginBottom: "4px" }}>
-                        {stat.value}
-                      </p>
-                      <p className="font-[var(--font-jetbrains)] uppercase"
-                        style={{ fontSize: "7.5px", letterSpacing: "0.12em", color: "#7a7a7a" }}>
-                        {stat.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* ── Form container ── */}
@@ -430,10 +394,10 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                     <div className="flex items-center justify-center shrink-0"
                       style={{
                         width: "38px", height: "38px", borderRadius: "10px",
-                        background: "rgba(212,175,55,0.05)",
-                        border: "1px solid rgba(212,175,55,0.18)",
+                        background: "rgba(190,163,101,0.05)",
+                        border: "1px solid rgba(190,163,101,0.18)",
                       }}>
-                      <ShieldCheck style={{ width: "17px", height: "17px", color: "#D4AF37" }} />
+                      <ShieldCheck style={{ width: "17px", height: "17px", color: "#BEA365" }} />
                     </div>
                     <div>
                       <p className="font-[var(--font-jetbrains)] uppercase"
@@ -495,7 +459,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                         border: "1px solid rgba(255,255,255,0.07)",
                         borderRadius: "8px", padding: "16px 18px",
                         fontSize: "13px", letterSpacing: "0.02em",
-                        color: "#dcdcdc", caretColor: "#D4AF37",
+                        color: "#dcdcdc", caretColor: "#BEA365",
                         outline: "none", transition: "all 0.22s",
                       }}
                       onFocus={onFocus} onBlur={onBlur}
@@ -521,14 +485,14 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                           border: "1px solid rgba(255,255,255,0.07)",
                           borderRadius: "8px", padding: "16px 48px 16px 18px",
                           fontSize: "13px", letterSpacing: "0.06em",
-                          color: "#dcdcdc", caretColor: "#D4AF37",
+                          color: "#dcdcdc", caretColor: "#BEA365",
                           outline: "none", transition: "all 0.22s",
                         }}
                         onFocus={onFocus} onBlur={onBlur}
                         placeholder={t.login.passwordPlaceholder}
                       />
                       <button type="button" onClick={() => setShowPw(!showPw)} tabIndex={-1}
-                        className="absolute right-3.5 top-1/2 -translate-y-1/2 hover:text-[#D4AF37] transition-colors duration-150"
+                        className="absolute right-3.5 top-1/2 -translate-y-1/2 hover:text-[#BEA365] transition-colors duration-150"
                         style={{ color: "#383838" }}>
                         {showPw ? <EyeOff className="w-[14px] h-[14px]" /> : <Eye className="w-[14px] h-[14px]" />}
                       </button>
@@ -544,13 +508,13 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                     <div className="shrink-0 flex items-center justify-center"
                       style={{
                         width: "14px", height: "14px", marginTop: "1px", borderRadius: "3px", flexShrink: 0,
-                        background: agreed ? "rgba(212,175,55,0.1)"  : "transparent",
-                        border:     agreed ? "1px solid rgba(212,175,55,0.65)" : "1px solid rgba(255,255,255,0.14)",
+                        background: agreed ? "rgba(190,163,101,0.1)"  : "transparent",
+                        border:     agreed ? "1px solid rgba(190,163,101,0.65)" : "1px solid rgba(255,255,255,0.14)",
                         transition: "all 0.2s",
                       }}>
                       {agreed && (
                         <svg style={{ width: "7px", height: "7px" }} fill="none" viewBox="0 0 10 10">
-                          <path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="#D4AF37" strokeWidth="1.5"
+                          <path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="#BEA365" strokeWidth="1.5"
                             strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       )}
@@ -614,7 +578,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
           >
             <GoldGeometry />
             <div className="absolute inset-0 pointer-events-none" style={{
-              background: "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(212,175,55,0.06) 0%, transparent 70%)",
+              background: "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(190,163,101,0.06) 0%, transparent 70%)",
             }} />
 
             {(() => {
@@ -688,7 +652,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                   <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
                     className="flex items-center gap-2">
                     {[0,1,2].map(i => (
-                      <motion.div key={i} className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"
+                      <motion.div key={i} className="w-1.5 h-1.5 rounded-full bg-[#BEA365]"
                         animate={{ opacity: [0.25, 1, 0.25] }}
                         transition={{ duration: 1.3, repeat: Infinity, delay: i * 0.25 }} />
                     ))}

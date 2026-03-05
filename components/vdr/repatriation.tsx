@@ -155,7 +155,7 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
       <Reveal delay={0.1}>
         <div className="glass-form p-6 mb-6">
           <div className="flex items-center gap-2 mb-4">
-            <Receipt style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
+            <Receipt style={{ width: "13px", height: "13px", color: "#BEA365", flexShrink: 0 }} />
             <h3 className="vdr-section-label">
               <Explain k="tpi">{rv.tpiEngineLabel}</Explain>
             </h3>
@@ -209,10 +209,10 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
             {taxModel.corridors.map((corridor) => (
               <div
                 key={corridor.name}
-                className="glass-form p-4 border-l-2 border-[#D4AF37] hover:border-[#DFBD69] transition-colors"
+                className="glass-form p-4 border-l-2 border-[#BEA365] hover:border-[#DFBD69] transition-colors"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <Globe className="w-3 h-3 text-[#D4AF37]" />
+                  <Globe className="w-3 h-3 text-[#BEA365]" />
                   <span className="text-xs text-[#c0c0c0]">{corridor.name}</span>
                 </div>
                 <p className="font-mono text-lg text-[#ffffff] font-bold">
@@ -242,10 +242,10 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
             {flowSteps.map((step, i) => (
               <div key={step.label} className="flex items-start">
                 <div className="flex flex-col items-center text-center flex-1 min-w-0">
-                  <div className="w-14 h-14 rounded-xl glass-form flex items-center justify-center mb-3 border border-[rgba(212,175,55,0.3)]">
-                    <step.icon className="w-6 h-6 text-[#D4AF37]" />
+                  <div className="w-14 h-14 rounded-xl glass-form flex items-center justify-center mb-3 border border-[rgba(190,163,101,0.3)]">
+                    <step.icon className="w-6 h-6 text-[#BEA365]" />
                   </div>
-                  <span className="text-[11px] text-[#D4AF37] font-mono mb-1">{step.month}</span>
+                  <span className="text-[11px] text-[#BEA365] font-mono mb-1">{step.month}</span>
                   <p className="text-xs font-semibold text-[#ffffff] mb-1 leading-tight">
                     {step.label}
                   </p>
@@ -254,7 +254,7 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
                   </p>
                 </div>
                 {i < flowSteps.length - 1 && (
-                  <ArrowRight className="w-5 h-5 text-[#D4AF37] mt-4 mx-1 shrink-0" />
+                  <ArrowRight className="w-5 h-5 text-[#BEA365] mt-4 mx-1 shrink-0" />
                 )}
               </div>
             ))}
@@ -265,11 +265,11 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
             {flowSteps.map((step, i) => (
               <div key={step.label}>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl glass-form flex items-center justify-center shrink-0 border border-[rgba(212,175,55,0.3)]">
-                    <step.icon className="w-5 h-5 text-[#D4AF37]" />
+                  <div className="w-12 h-12 rounded-xl glass-form flex items-center justify-center shrink-0 border border-[rgba(190,163,101,0.3)]">
+                    <step.icon className="w-5 h-5 text-[#BEA365]" />
                   </div>
                   <div>
-                    <span className="text-[11px] text-[#D4AF37] font-mono">{step.month}</span>
+                    <span className="text-[11px] text-[#BEA365] font-mono">{step.month}</span>
                     <p className="text-sm font-semibold text-[#ffffff]">
                       {step.label}
                     </p>
@@ -279,7 +279,7 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
                   </div>
                 </div>
                 {i < flowSteps.length - 1 && (
-                  <div className="ml-6 h-6 border-l border-dashed border-[rgba(212,175,55,0.3)]" />
+                  <div className="ml-6 h-6 border-l border-dashed border-[rgba(190,163,101,0.3)]" />
                 )}
               </div>
             ))}
@@ -321,12 +321,12 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
             {documents.map((doc) => (
               <div
                 key={doc.file}
-                className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 sm:justify-between p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(212,175,55,0.2)] transition-all duration-300 group"
+                className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 sm:justify-between p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(190,163,101,0.2)] transition-all duration-300 group"
               >
                 <div className="flex items-center gap-3">
                   <FileText className="w-5 h-5 text-[#EF4444] shrink-0" />
                   <div>
-                    <p className="text-sm text-[#ffffff] group-hover:text-[#D4AF37] transition-colors">
+                    <p className="text-sm text-[#ffffff] group-hover:text-[#BEA365] transition-colors">
                       {doc.file.includes("IGOC") ? <Explain k="igoc">{doc.name}</Explain> :
                        doc.file.includes("SARL") ? <Explain k="sarl">{doc.name}</Explain> :
                        doc.file.includes("VEFA") ? <Explain k="notary-escrow">{doc.name}</Explain> :
