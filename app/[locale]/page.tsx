@@ -136,8 +136,8 @@ export default function VDRApp() {
                     background: "rgba(255,255,255,0.018)",
                   }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLButtonElement).style.color = "#C5A059"
-                    ;(e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(197,160,89,0.32)"
+                    (e.currentTarget as HTMLButtonElement).style.color = "#D4AF37"
+                    ;(e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(212,175,55,0.32)"
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLButtonElement).style.color = "#909090"
@@ -151,7 +151,7 @@ export default function VDRApp() {
                 {/* Mobile — first name only */}
                 <span
                   className="block md:hidden font-[var(--font-playfair)]"
-                  style={{ fontSize: "13px", color: "#C5A059", letterSpacing: "0.01em" }}
+                  style={{ fontSize: "13px", color: "#D4AF37", letterSpacing: "0.01em" }}
                 >
                   {account.fullName.split(" ")[0]}
                 </span>
@@ -160,7 +160,7 @@ export default function VDRApp() {
                 <div className="hidden md:flex flex-col items-end" style={{ gap: "3px" }}>
                   <span
                     className="font-[var(--font-playfair)]"
-                    style={{ fontSize: "13.5px", color: "#C5A059", letterSpacing: "0.01em" }}
+                    style={{ fontSize: "13.5px", color: "#D4AF37", letterSpacing: "0.01em" }}
                   >
                     {account.fullName}
                   </span>

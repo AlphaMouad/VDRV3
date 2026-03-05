@@ -106,8 +106,8 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         title: sv.avatarRepeTitle,
         desc: sv.avatarRepeDesc,
         Icon: TrendingUp,
-        accentColor: "#C5A059",
-        iconBg: "rgba(197,160,89,0.15)",
+        accentColor: "#D4AF37",
+        iconBg: "rgba(212,175,55,0.15)",
       },
       {
         type: "FamilyOffice" as const,
@@ -124,8 +124,8 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         title: sv.avatarUhnwiTitle,
         desc: sv.avatarUhnwiDesc,
         Icon: Crown,
-        accentColor: "#C5A059",
-        iconBg: "rgba(197,160,89,0.1)",
+        accentColor: "#D4AF37",
+        iconBg: "rgba(212,175,55,0.1)",
       },
     ]
     const idx = cards.findIndex((c) => c.type === account.avatarType)
@@ -137,7 +137,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
   }, [account.avatarType, sv])
 
   const alphaWedgeData = [
-    { name: t.dashboard.alphaWedgeCostLabel, value: macro.gdcPerVilla, fill: "#C5A059" },
+    { name: t.dashboard.alphaWedgeCostLabel, value: macro.gdcPerVilla, fill: "#D4AF37" },
     { name: t.dashboard.alphaWedgeRetailLabel, value: macro.avgVillaGDV, fill: "#10B981" },
   ]
 
@@ -154,7 +154,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         termKey: "irr",
         format: "irr" as const,
         accentColor: "#10B981",
-        accentBg: "rgba(16,185,129,0.08)",
+        accentBg: "rgba(16,185,129,0.15)",
       },
       {
         label: t.dashboard.moicLabel,
@@ -164,8 +164,8 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         icon: Percent,
         termKey: "moic",
         format: "moic" as const,
-        accentColor: "#C5A059",
-        accentBg: "rgba(197,160,89,0.08)",
+        accentColor: "#D4AF37",
+        accentBg: "rgba(212,175,55,0.15)",
       },
       {
         label: t.dashboard.lpLabel,
@@ -186,8 +186,8 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         icon: Zap,
         termKey: "peak-equity",
         format: "dollar" as const,
-        accentColor: "#C5A059",
-        accentBg: "rgba(197,160,89,0.07)",
+        accentColor: "#D4AF37",
+        accentBg: "rgba(212,175,55,0.07)",
       },
       {
         label: t.dashboard.gdvLabel,
@@ -206,7 +206,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         displayValue: null as null,
         icon: Shield,
         sublabel: t.dashboard.bearSublabel,
-        badgeColor: "#C5A059",
+        badgeColor: "#D4AF37",
         badge: t.dashboard.bearBadge,
         termKey: "bear-case",
         format: "bearYield" as const,
@@ -232,12 +232,12 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         <div
           className="p-5 sm:p-6 mb-6 sm:mb-8 rounded-xl"
           style={{
-            border: "1px solid rgba(197,160,89,0.22)",
+            border: "1px solid rgba(212,175,55,0.22)",
             background: "rgba(255,255,255,0.015)",
           }}
         >
           <div className="flex items-center gap-2 mb-4 sm:mb-5">
-            <Users2 style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+            <Users2 style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
             <span className="vdr-section-label">
               {locale === "fr" ? "Profil Investisseur" : "Investor Profile Alignment"}
             </span>
@@ -253,10 +253,10 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                   className="relative overflow-hidden rounded-xl p-4 sm:p-5"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(197,160,89,0.11) 0%, rgba(8,8,8,0.97) 100%)",
-                    border: "2px solid rgba(197,160,89,0.62)",
+                      "linear-gradient(135deg, rgba(212,175,55,0.11) 0%, rgba(8,8,8,0.97) 100%)",
+                    border: "2px solid rgba(212,175,55,0.62)",
                     boxShadow:
-                      "0 0 42px rgba(197,160,89,0.17), 0 0 0 1px rgba(197,160,89,0.08) inset",
+                      "0 0 60px rgba(212,175,55,0.3), 0 0 0 1.5px rgba(212,175,55,0.15) inset",
                   }}
                 >
                   {/* Gold shimmer top edge */}
@@ -264,7 +264,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                     className="absolute top-0 left-0 right-0 h-px"
                     style={{
                       background:
-                        "linear-gradient(90deg, transparent 0%, rgba(197,160,89,0.75) 50%, transparent 100%)",
+                        "linear-gradient(90deg, transparent 0%, rgba(212,175,55,0.75) 50%, transparent 100%)",
                     }}
                   />
 
@@ -272,16 +272,16 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                   <div
                     className="flex items-center gap-1.5 px-2.5 py-1 rounded-full mb-3 sm:mb-4 w-fit"
                     style={{
-                      background: "rgba(197,160,89,0.1)",
-                      border: "1px solid rgba(197,160,89,0.35)",
+                      background: "rgba(212,175,55,0.1)",
+                      border: "1px solid rgba(212,175,55,0.35)",
                     }}
                   >
                     <span style={{
                       display: "inline-block", width: "5px", height: "5px",
-                      borderRadius: "50%", background: "#C5A059",
-                      boxShadow: "0 0 5px rgba(197,160,89,0.8)", flexShrink: 0,
+                      borderRadius: "50%", background: "#D4AF37",
+                      boxShadow: "0 0 5px rgba(212,175,55,0.8)", flexShrink: 0,
                     }} />
-                    <span className="font-[var(--font-jetbrains)] text-[#C5A059] tracking-[0.22em] uppercase" style={{ fontSize: "10px", fontWeight: 600 }}>
+                    <span className="font-[var(--font-jetbrains)] text-[#D4AF37] tracking-[0.22em] uppercase" style={{ fontSize: "10px", fontWeight: 600 }}>
                       {sv.yourProfileBadge}
                     </span>
                   </div>
@@ -291,7 +291,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                       className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
                       style={{
                         background: card.iconBg,
-                        border: "1px solid rgba(197,160,89,0.25)",
+                        border: "1px solid rgba(212,175,55,0.25)",
                       }}
                     >
                       <card.Icon className="w-5 h-5" style={{ color: card.accentColor }} />
@@ -425,11 +425,11 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
       {/* ── Probability-Weighted Return Profile ── */}
       <Reveal delay={0.5}>
         <div
-          className="glass-form p-5 sm:p-6 mb-6 sm:mb-8 border border-[rgba(197,160,89,0.15)]"
-          style={{ background: "linear-gradient(135deg, rgba(197,160,89,0.035) 0%, rgba(0,0,0,0.6) 100%)" }}
+          className="glass-form p-5 sm:p-6 mb-6 sm:mb-8 border border-[rgba(212,175,55,0.15)]"
+          style={{ background: "linear-gradient(135deg, rgba(212,175,55,0.035) 0%, rgba(0,0,0,0.6) 100%)" }}
         >
           <div className="flex items-center gap-2 mb-4">
-            <BarChart3 style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+            <BarChart3 style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
             <span className="vdr-section-label">{t.common.expectedReturn}</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
@@ -676,9 +676,9 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
           {/* Tagline */}
           <div
             className="rounded-lg py-3 px-4 text-center"
-            style={{ background: "rgba(197,160,89,0.04)", border: "1px solid rgba(197,160,89,0.1)" }}
+            style={{ background: "rgba(212,175,55,0.04)", border: "1px solid rgba(212,175,55,0.1)" }}
           >
-            <p className="font-[var(--font-jetbrains)] text-[10.5px] tracking-[0.14em] uppercase text-[#C5A059]">
+            <p className="font-[var(--font-jetbrains)] text-[10.5px] tracking-[0.14em] uppercase text-[#D4AF37]">
               {t.dashboard.comparisonTagline}
             </p>
           </div>
@@ -688,8 +688,8 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
       {/* ── Investment Thesis ── */}
       <Reveal delay={0.7}>
         <div
-          className="glass-form p-5 sm:p-6 border-l-[3px] border-[#C5A059]"
-          style={{ background: "rgba(197,160,89,0.015)" }}
+          className="glass-form p-5 sm:p-6 border-l-[3px] border-[#D4AF37]"
+          style={{ background: "rgba(212,175,55,0.015)" }}
         >
           <h3 className="font-[var(--font-playfair)] text-base sm:text-lg text-[#ffffff] mb-3">
             {t.dashboard.thesisTitle}
@@ -706,13 +706,13 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
             <div
               className="mt-6 sm:mt-8 rounded-xl p-6 sm:p-8 relative overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, rgba(197,160,89,0.10) 0%, rgba(8,8,8,0.97) 100%)",
-                border: "1px solid rgba(197,160,89,0.32)",
-                boxShadow: "0 0 40px rgba(197,160,89,0.08)",
+                background: "linear-gradient(135deg, rgba(212,175,55,0.10) 0%, rgba(8,8,8,0.97) 100%)",
+                border: "1px solid rgba(212,175,55,0.32)",
+                boxShadow: "0 0 40px rgba(212,175,55,0.08)",
               }}
             >
               <div className="absolute top-0 left-0 right-0 h-px"
-                style={{ background: "linear-gradient(90deg, transparent, rgba(197,160,89,0.7) 50%, transparent)" }} />
+                style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.7) 50%, transparent)" }} />
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div className="flex-1">
                   <p className="vdr-section-label mb-3">{ns.eyebrow}</p>
@@ -726,9 +726,9 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                   className="group relative overflow-hidden rounded-xl shrink-0"
                   style={{
                     padding: "14px 28px",
-                    background: "linear-gradient(135deg, #C5A059 0%, #9A7B3E 100%)",
-                    boxShadow: "0 0 28px rgba(197,160,89,0.35)",
-                    border: "1px solid rgba(197,160,89,0.5)",
+                    background: "linear-gradient(135deg, #D4AF37 0%, #9A7B3E 100%)",
+                    boxShadow: "0 0 28px rgba(212,175,55,0.35)",
+                    border: "1px solid rgba(212,175,55,0.5)",
                   }}
                 >
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />

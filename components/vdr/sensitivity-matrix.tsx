@@ -61,9 +61,9 @@ const SCENARIO_META: ScenarioMeta[] = [
   {
     id: "base",
     icon: Target,
-    color: "#C5A059",
-    bgColor: "rgba(197,160,89,0.08)",
-    borderColor: "rgba(197,160,89,0.4)",
+    color: "#D4AF37",
+    bgColor: "rgba(212,175,55,0.08)",
+    borderColor: "rgba(212,175,55,0.4)",
     probability: "50%",
   },
   {
@@ -220,9 +220,9 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
 
       {/* Probability-Weighted Expected Return */}
       <Reveal delay={0.05}>
-        <div className="glass-form p-6 mb-6 border border-[rgba(197,160,89,0.2)]">
+        <div className="glass-form p-6 mb-6 border border-[rgba(212,175,55,0.2)]">
           <div className="flex items-center gap-2 mb-4">
-            <BarChart3 style={{ width: "13px", height: "13px", color: "#C5A059", flexShrink: 0 }} />
+            <BarChart3 style={{ width: "13px", height: "13px", color: "#D4AF37", flexShrink: 0 }} />
             <span className="vdr-section-label">
               {t.common.expectedReturn}
             </span>
@@ -363,7 +363,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                   </div>
                   <div className="glass-form p-3">
                     <p className="text-[11px] tracking-[0.15em] uppercase text-[#c4c4c4] mb-1">{sv.peakEquity}</p>
-                    <p className="font-mono text-lg font-bold text-[#C5A059]">
+                    <p className="font-mono text-lg font-bold text-[#D4AF37]">
                       €{Math.round(result.peakEquity).toLocaleString()}
                     </p>
                   </div>
@@ -376,7 +376,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                 </div>
 
                 {result.villasRental > 0 && (
-                  <div className="glass-form p-4 border-l-2 border-[#C5A059] mb-4">
+                  <div className="glass-form p-4 border-l-2 border-[#D4AF37] mb-4">
                     <p className="text-xs font-semibold text-[#ffffff] mb-1">
                       {sv.hospitalityPivot} — {result.villasRental} villas at €{params.rentalADR}/night, {params.rentalOccupancy}% occupancy
                     </p>
@@ -479,7 +479,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                   domain={[0, 2.5]}
                 />
                 <Radar name={sv.bullName} dataKey="bull" stroke="#10B981" fill="#10B981" fillOpacity={0.1} strokeWidth={2} animationDuration={800} animationEasing="ease-out" />
-                <Radar name={sv.baseName} dataKey="base" stroke="#C5A059" fill="#C5A059" fillOpacity={0.08} strokeWidth={2} animationDuration={800} animationEasing="ease-out" />
+                <Radar name={sv.baseName} dataKey="base" stroke="#D4AF37" fill="#D4AF37" fillOpacity={0.08} strokeWidth={2} animationDuration={800} animationEasing="ease-out" />
                 <Radar name={sv.bearName} dataKey="bear" stroke="#F59E0B" fill="#F59E0B" fillOpacity={0.06} strokeWidth={1.5} animationDuration={800} animationEasing="ease-out" />
                 <Radar name={sv.catastrophicName} dataKey="catastrophic" stroke="#EF4444" fill="#EF4444" fillOpacity={0.04} strokeWidth={1.5} animationDuration={800} animationEasing="ease-out" />
                 <Legend wrapperStyle={{ fontSize: 11, color: "#a3a3a3" }} />
@@ -687,7 +687,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                   ))}
                 </tr>
                 <tr className="border-t border-[rgba(255,255,255,0.12)]">
-                  <td className="text-xs font-bold text-[#C5A059] py-3 px-3">{sv.probability}</td>
+                  <td className="text-xs font-bold text-[#D4AF37] py-3 px-3">{sv.probability}</td>
                   {results.map(({ meta }) => (
                     <td key={meta.id} className="font-mono text-xs text-[#c0c0c0] py-3 px-3 text-right">
                       {meta.probability}
@@ -702,7 +702,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
 
       {/* The Unlevered Advantage */}
       <Reveal delay={0.6}>
-        <div className="glass-form p-6 border-l-2 border-[#C5A059]">
+        <div className="glass-form p-6 border-l-2 border-[#D4AF37]">
           <h3 className="font-[var(--font-playfair)] text-lg text-[#ffffff] mb-3">
             {sv.advantageTitle}
           </h3>
