@@ -115,8 +115,8 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         title: sv.avatarFoTitle,
         desc: sv.avatarFoDesc,
         Icon: Building2,
-        accentColor: "#10B981",
-        iconBg: "rgba(16,185,129,0.12)",
+        accentColor: "#0F9D58",
+        iconBg: "rgba(15,157,88,0.12)",
       },
       {
         type: "UHNWI" as const,
@@ -138,7 +138,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
 
   const alphaWedgeData = [
     { name: t.dashboard.alphaWedgeCostLabel, value: macro.gdcPerVilla, fill: "#BEA365" },
-    { name: t.dashboard.alphaWedgeRetailLabel, value: macro.avgVillaGDV, fill: "#10B981" },
+    { name: t.dashboard.alphaWedgeRetailLabel, value: macro.avgVillaGDV, fill: "#0F9D58" },
   ]
 
   const heroMetrics = useMemo(
@@ -149,12 +149,12 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         displayValue: null as null,
         badge: t.dashboard.irrBadge,
         icon: TrendingUp,
-        badgeColor: "#10B981",
+        badgeColor: "#0F9D58",
         sublabel: t.dashboard.irrSublabel,
         termKey: "irr",
         format: "irr" as const,
-        accentColor: "#10B981",
-        accentBg: "rgba(16,185,129,0.15)",
+        accentColor: "#0F9D58",
+        accentBg: "rgba(15,157,88,0.15)",
       },
       {
         label: t.dashboard.moicLabel,
@@ -210,8 +210,8 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         badge: t.dashboard.bearBadge,
         termKey: "bear-case",
         format: "bearYield" as const,
-        accentColor: "#10B981",
-        accentBg: "rgba(16,185,129,0.07)",
+        accentColor: "#0F9D58",
+        accentBg: "rgba(15,157,88,0.07)",
       },
     ],
     [waterfall, peakEquity, bearYield, lpCommitment, totalGDV, totalGDC, macro, t, baseIrr]
@@ -413,7 +413,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                 </span>
               )}
               {"highlight" in metric && metric.highlight && (
-                <p className="text-[#10B981] text-[11px] sm:text-xs mt-2 font-semibold tracking-wide">
+                <p className="text-[#0F9D58] text-[11px] sm:text-xs mt-2 font-semibold tracking-wide">
                   {metric.highlight}
                 </p>
               )}
@@ -445,7 +445,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
               <p className="text-[11px] tracking-[0.2em] uppercase text-[#c0c0c0] mb-2">
                 {t.common.weightedIrr}
               </p>
-              <p className="font-mono text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10B981]">
+              <p className="font-mono text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F9D58]">
                 <AnimatedValue value={weighted.irr} format="percent" decimals={0} />%
               </p>
             </div>
@@ -514,7 +514,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                     formatter={(value: number) => `€${value.toLocaleString()}`}
                     contentStyle={{
                       background: "rgba(10,10,10,0.9)",
-                      border: "1px solid rgba(255,255,255,0.12)",
+                      border: "1px solid rgba(190, 163, 101, 0.3)", boxShadow: "0 4px 20px rgba(0,0,0,0.8)", backdropFilter: "blur(8px)",
                       borderRadius: 8,
                       color: "#fff",
                       fontFamily: "var(--font-jetbrains)",
@@ -576,23 +576,23 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
             <div
               className="rounded-xl p-4 sm:p-5"
               style={{
-                background: "rgba(239,68,68,0.03)",
-                border: "1px solid rgba(239,68,68,0.16)",
+                background: "rgba(211,47,47,0.03)",
+                border: "1px solid rgba(211,47,47,0.16)",
               }}
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <span style={{
                     display: "inline-block", width: "6px", height: "6px",
-                    borderRadius: "50%", background: "#EF4444",
-                    boxShadow: "0 0 6px rgba(239,68,68,0.6)", flexShrink: 0,
+                    borderRadius: "50%", background: "#D32F2F",
+                    boxShadow: "0 0 6px rgba(211,47,47,0.6)", flexShrink: 0,
                   }} />
-                  <span className="font-[var(--font-jetbrains)] text-[10.5px] tracking-[0.18em] uppercase text-[#EF4444] font-semibold">
+                  <span className="font-[var(--font-jetbrains)] text-[10.5px] tracking-[0.18em] uppercase text-[#D32F2F] font-semibold">
                     {t.dashboard.conventionalLabel}
                   </span>
                 </div>
                 <span className="font-[var(--font-jetbrains)] text-[9px] tracking-[0.18em] uppercase px-2 py-0.5 rounded-full"
-                  style={{ color: "#EF4444", background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.18)" }}>
+                  style={{ color: "#D32F2F", background: "rgba(211,47,47,0.08)", border: "1px solid rgba(211,47,47,0.18)" }}>
                   Structural Risks
                 </span>
               </div>
@@ -607,13 +607,13 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                   <div
                     key={row.label}
                     className="flex items-start justify-between gap-3 py-2"
-                    style={{ borderBottom: "1px solid rgba(239,68,68,0.06)" }}
+                    style={{ borderBottom: "1px solid rgba(211,47,47,0.06)" }}
                   >
                     <div className="flex items-start gap-2 min-w-0">
-                      <span style={{ color: "#EF4444", fontSize: "10px", marginTop: "1px", flexShrink: 0 }}>✕</span>
+                      <span style={{ color: "#D32F2F", fontSize: "10px", marginTop: "1px", flexShrink: 0 }}>✕</span>
                       <span className="text-xs leading-tight" style={{ color: "#a8a8a8" }}>{row.label}</span>
                     </div>
-                    <span className="font-[var(--font-jetbrains)] text-[11px] font-semibold text-[#EF4444] text-right shrink-0">
+                    <span className="font-[var(--font-jetbrains)] text-[11px] font-semibold text-[#D32F2F] text-right shrink-0">
                       {row.value}
                     </span>
                   </div>
@@ -625,25 +625,25 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
             <div
               className="rounded-xl p-4 sm:p-5 relative overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, rgba(16,185,129,0.04) 0%, rgba(0,0,0,0.6) 100%)",
-                border: "1px solid rgba(16,185,129,0.22)",
+                background: "linear-gradient(135deg, rgba(15,157,88,0.04) 0%, rgba(0,0,0,0.6) 100%)",
+                border: "1px solid rgba(15,157,88,0.22)",
               }}
             >
               <div className="absolute top-0 left-0 right-0 h-px"
-                style={{ background: "linear-gradient(90deg, transparent, rgba(16,185,129,0.45) 50%, transparent)" }} />
+                style={{ background: "linear-gradient(90deg, transparent, rgba(15,157,88,0.45) 50%, transparent)" }} />
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <span style={{
                     display: "inline-block", width: "6px", height: "6px",
-                    borderRadius: "50%", background: "#10B981",
-                    boxShadow: "0 0 6px rgba(16,185,129,0.65)", flexShrink: 0,
+                    borderRadius: "50%", background: "#0F9D58",
+                    boxShadow: "0 0 6px rgba(15,157,88,0.65)", flexShrink: 0,
                   }} />
-                  <span className="font-[var(--font-jetbrains)] text-[10.5px] tracking-[0.18em] uppercase text-[#10B981] font-semibold">
+                  <span className="font-[var(--font-jetbrains)] text-[10.5px] tracking-[0.18em] uppercase text-[#0F9D58] font-semibold">
                     {t.dashboard.ambassadeurLabel}
                   </span>
                 </div>
                 <span className="font-[var(--font-jetbrains)] text-[9px] tracking-[0.18em] uppercase px-2 py-0.5 rounded-full"
-                  style={{ color: "#10B981", background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)" }}>
+                  style={{ color: "#0F9D58", background: "rgba(15,157,88,0.08)", border: "1px solid rgba(15,157,88,0.2)" }}>
                   Zero Structural Risk
                 </span>
               </div>
@@ -658,13 +658,13 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                   <div
                     key={row.label}
                     className="flex items-start justify-between gap-3 py-2"
-                    style={{ borderBottom: "1px solid rgba(16,185,129,0.06)" }}
+                    style={{ borderBottom: "1px solid rgba(15,157,88,0.06)" }}
                   >
                     <div className="flex items-start gap-2 min-w-0">
-                      <span style={{ color: "#10B981", fontSize: "10px", marginTop: "1px", flexShrink: 0 }}>✓</span>
+                      <span style={{ color: "#0F9D58", fontSize: "10px", marginTop: "1px", flexShrink: 0 }}>✓</span>
                       <span className="text-xs leading-tight" style={{ color: "#a8a8a8" }}>{row.label}</span>
                     </div>
-                    <span className="font-[var(--font-jetbrains)] text-[11px] font-semibold text-[#10B981] text-right shrink-0">
+                    <span className="font-[var(--font-jetbrains)] text-[11px] font-semibold text-[#0F9D58] text-right shrink-0">
                       {row.value}
                     </span>
                   </div>

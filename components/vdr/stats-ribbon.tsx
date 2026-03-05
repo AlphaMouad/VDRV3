@@ -38,10 +38,10 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
     },
     {
       label: t.common.statsRibbonIrr ?? "IRR Range",
-      accent: "#10B981",
+      accent: "#0F9D58",
       content: (
         <span className="font-[var(--font-jetbrains)] font-bold tabular-nums"
-          style={{ color: "#10B981", fontSize: "15px", letterSpacing: "-0.03em" }}>
+          style={{ color: "#0F9D58", fontSize: "15px", letterSpacing: "-0.03em" }}>
           <AnimatedValue value={baseIrr - 2} format="percent" decimals={0} />
           %–<AnimatedValue value={baseIrr + 2} format="percent" decimals={0} />%
         </span>
@@ -69,10 +69,10 @@ export function StatsRibbon({ macro, t }: StatsRibbonProps) {
     },
     {
       label: t.common.statsRibbonBear ?? "Bear Floor",
-      accent: "#10B981",
+      accent: "#0F9D58",
       content: (
         <span className="font-[var(--font-jetbrains)] font-bold tabular-nums"
-          style={{ color: "#10B981", fontSize: "15px", letterSpacing: "-0.03em" }}>
+          style={{ color: "#0F9D58", fontSize: "15px", letterSpacing: "-0.03em" }}>
           <AnimatedValue value={bearYield.lpDividendYield} format="percent" decimals={1} />%
         </span>
       ),

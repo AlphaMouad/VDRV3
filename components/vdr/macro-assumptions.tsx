@@ -148,15 +148,15 @@ export function MacroAssumptions({ macro, onChange, t, locale }: MacroAssumption
           </div>
           <div className="glass-form p-4">
             <p className="vdr-section-label mb-1">{t.macroView.grossMarkup}</p>
-            <p className="font-mono text-xl text-[#10B981] font-bold">{grossMargin}%</p>
+            <p className="font-mono text-xl text-[#0F9D58] font-bold">{grossMargin}%</p>
           </div>
           <div className="glass-form p-4">
             <p className="vdr-section-label mb-1">{t.macroView.vefaSum}</p>
-            <p className={`font-mono text-xl font-bold ${vefaTotal === 100 ? "text-[#10B981]" : "text-[#EF4444]"}`}>
+            <p className={`font-mono text-xl font-bold ${vefaTotal === 100 ? "text-[#0F9D58]" : "text-[#D32F2F]"}`}>
               {vefaTotal}%
             </p>
             {vefaTotal !== 100 && (
-              <p className="text-[11px] text-[#EF4444] mt-0.5">{t.macroView.vefaMustTotal}</p>
+              <p className="text-[11px] text-[#D32F2F] mt-0.5">{t.macroView.vefaMustTotal}</p>
             )}
           </div>
         </div>
@@ -190,10 +190,10 @@ export function MacroAssumptions({ macro, onChange, t, locale }: MacroAssumption
             </div>
             <div className="glass-form p-4 border border-[rgba(190,163,101,0.1)]">
               <div className="flex items-center gap-2 mb-2">
-                <Banknote className="w-3.5 h-3.5 text-[#10B981]" />
+                <Banknote className="w-3.5 h-3.5 text-[#0F9D58]" />
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[#c0c0c0]">{t.macroView.avgVillaGdv}</p>
               </div>
-              <p className="font-mono text-2xl font-bold text-[#10B981]">€{macro.avgVillaGDV.toLocaleString()}</p>
+              <p className="font-mono text-2xl font-bold text-[#0F9D58]">€{macro.avgVillaGDV.toLocaleString()}</p>
               <p className="text-xs text-[#c0c0c0] mt-1">{t.macroView.avgVillaGdvSub}</p>
             </div>
           </div>

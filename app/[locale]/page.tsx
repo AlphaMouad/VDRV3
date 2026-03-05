@@ -176,12 +176,12 @@ export default function VDRApp() {
                 <div className="flex items-center gap-1.5">
                   <span className="pulse-dot" style={{
                     display: "inline-block", width: "5px", height: "5px",
-                    borderRadius: "50%", background: "#10B981",
-                    boxShadow: "0 0 7px rgba(16,185,129,0.9)", flexShrink: 0,
+                    borderRadius: "50%", background: "#0F9D58",
+                    boxShadow: "0 0 7px rgba(15,157,88,0.9)", flexShrink: 0,
                   }} />
                   <span
                     className="hidden sm:inline font-[var(--font-jetbrains)] uppercase"
-                    style={{ fontSize: "10.5px", letterSpacing: "0.13em", color: "#10B981" }}
+                    style={{ fontSize: "10.5px", letterSpacing: "0.13em", color: "#0F9D58" }}
                   >
                     {t.common.secure}
                   </span>

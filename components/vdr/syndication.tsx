@@ -48,10 +48,10 @@ const SCENARIO_COLORS: Record<string, string> = {
   catastrophic: "#D32F2F",
 }
 const SCENARIO_BG: Record<string, string> = {
-  bull: "rgba(16,185,129,0.08)",
+  bull: "rgba(15,157,88,0.08)",
   base: "rgba(190,163,101,0.08)",
   bear: "rgba(245,158,11,0.08)",
-  catastrophic: "rgba(239,68,68,0.08)",
+  catastrophic: "rgba(211,47,47,0.08)",
 }
 const SCENARIO_NAMES: Record<string, { en: string; fr: string }> = {
   bull: { en: "Bull", fr: "Haussier" },
@@ -161,13 +161,13 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               <p className="font-mono text-lg font-bold text-[#ffffff]">{fmt(gpCommitment)}</p>
               <p className="text-[11px] text-[#c0c0c0] mt-0.5">Aligned GP skin-in-game</p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(16,185,129,0.2)]">
+            <div className="glass-form p-4 border border-[rgba(15,157,88,0.2)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.minTicket}</p>
-              <p className="font-mono text-lg font-bold text-[#10B981]">{fmt(macro.minTicketSize)}</p>
+              <p className="font-mono text-lg font-bold text-[#0F9D58]">{fmt(macro.minTicketSize)}</p>
             </div>
-            <div className="glass-form p-4 border border-[rgba(16,185,129,0.2)]">
+            <div className="glass-form p-4 border border-[rgba(15,157,88,0.2)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.maxTicket}</p>
-              <p className="font-mono text-lg font-bold text-[#10B981]">
+              <p className="font-mono text-lg font-bold text-[#0F9D58]">
                 {macro.maxTicketSize >= lpCommitment ? "Full Deal" : fmt(macro.maxTicketSize)}
               </p>
             </div>
@@ -269,11 +269,11 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               <p className="text-[11px] text-[#c0c0c0] mt-1">{sv.baseCaseLabel}</p>
             </div>
             {/* IRR */}
-            <div className="glass-form p-5 border border-[rgba(16,185,129,0.25)] text-center">
+            <div className="glass-form p-5 border border-[rgba(15,157,88,0.25)] text-center">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-2">
                 <Explain k="irr">{sv.projectedIrr}</Explain>
               </p>
-              <p className="font-mono text-3xl font-bold text-[#10B981]">
+              <p className="font-mono text-3xl font-bold text-[#0F9D58]">
                 <AnimatedValue value={slice.projectedIRR} format="percent" decimals={1} />%
               </p>
               <p className="text-[11px] text-[#c0c0c0] mt-1">p.a. · {macro.projectMonths}-month hold</p>
@@ -284,7 +284,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="glass-form p-4 border border-[rgba(255,255,255,0.06)]">
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0] mb-1">{sv.netProfitLabel}</p>
-              <p className={cn("font-mono text-xl font-bold", baseCaseProfit >= 0 ? "text-[#10B981]" : "text-[#EF4444]")}>
+              <p className={cn("font-mono text-xl font-bold", baseCaseProfit >= 0 ? "text-[#0F9D58]" : "text-[#D32F2F]")}>
                 {baseCaseProfit >= 0 ? "+" : ""}€<AnimatedValue value={Math.abs(baseCaseProfit)} format="currency" />
               </p>
               <p className="text-[11px] text-[#c0c0c0] mt-0.5">{locale === "fr" ? "Profit net cas de base" : "Net profit · base case"}</p>
@@ -294,7 +294,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               <p className="font-mono text-xl font-bold text-[#BEA365]">
                 €<AnimatedValue value={investorPeakEquity} format="currency" />
               </p>
-              <p className="text-[11px] text-[#10B981] mt-0.5">
+              <p className="text-[11px] text-[#0F9D58] mt-0.5">
                 {vefaRecycled > 0 ? `${fmt(Math.round(vefaRecycled))} VEFA recycled` : "full draw required"}
               </p>
             </div>
@@ -334,7 +334,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 amount: fmt(clampedTicket),
                 sub: sv.flowStep0Sub,
                 amtColor: "#a3a3a3",
-                icon: <ArrowDown className="w-3 h-3 text-[#EF4444]" />,
+                icon: <ArrowDown className="w-3 h-3 text-[#D32F2F]" />,
                 sign: "−",
               },
               {
@@ -342,8 +342,8 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 title: sv.flowStep1Title,
                 amount: fmt(call1),
                 sub: sv.flowStep1Sub,
-                amtColor: "#EF4444",
-                icon: <ArrowDown className="w-3 h-3 text-[#EF4444]" />,
+                amtColor: "#D32F2F",
+                icon: <ArrowDown className="w-3 h-3 text-[#D32F2F]" />,
                 sign: "−",
               },
               {
@@ -351,8 +351,8 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 title: sv.flowStep2Title,
                 amount: fmt(call2),
                 sub: sv.flowStep2Sub,
-                amtColor: "#EF4444",
-                icon: <ArrowDown className="w-3 h-3 text-[#EF4444]" />,
+                amtColor: "#D32F2F",
+                icon: <ArrowDown className="w-3 h-3 text-[#D32F2F]" />,
                 sign: "−",
               },
               {
@@ -360,8 +360,8 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 title: sv.flowStep3Title,
                 amount: `${fmt(Math.round(vefaRecycled))} recycled`,
                 sub: sv.flowStep3Sub,
-                amtColor: "#10B981",
-                icon: <ArrowUp className="w-3 h-3 text-[#10B981]" />,
+                amtColor: "#0F9D58",
+                icon: <ArrowUp className="w-3 h-3 text-[#0F9D58]" />,
                 sign: "↩",
               },
               {
@@ -370,7 +370,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                 amount: fmt(slice.projectedLP),
                 sub: sv.flowStep4Sub,
                 amtColor: "#BEA365",
-                icon: <ArrowUp className="w-3 h-3 text-[#10B981]" />,
+                icon: <ArrowUp className="w-3 h-3 text-[#0F9D58]" />,
                 sign: "+",
               },
             ].map((step, i) => (
@@ -396,7 +396,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                   {i === 4 && (
                     <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.06)] flex items-center justify-between">
                       <span className="text-[11px] tracking-[0.15em] uppercase text-[#c0c0c0]">{sv.netProfitLabel}</span>
-                      <span className={cn("font-mono text-sm font-bold", baseCaseProfit >= 0 ? "text-[#10B981]" : "text-[#EF4444]")}>
+                      <span className={cn("font-mono text-sm font-bold", baseCaseProfit >= 0 ? "text-[#0F9D58]" : "text-[#D32F2F]")}>
                         {baseCaseProfit >= 0 ? "+" : ""}{fmt(baseCaseProfit)}
                       </span>
                     </div>
@@ -416,7 +416,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
               <div className="text-right shrink-0">
                 <p className="gold-text-gradient font-mono text-2xl font-bold">{fmt(Math.round(investorPeakEquity))}</p>
                 {vefaRecycled > 0 && (
-                  <p className="text-[11px] text-[#10B981] font-mono mt-0.5">{sv.vefaRecycledLabel}: {fmt(Math.round(vefaRecycled))}</p>
+                  <p className="text-[11px] text-[#0F9D58] font-mono mt-0.5">{sv.vefaRecycledLabel}: {fmt(Math.round(vefaRecycled))}</p>
                 )}
               </div>
             </div>
@@ -467,7 +467,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                       </p>
                       <p className="font-mono text-xl font-bold" style={{ color }}>{fmt(s.lpCash)}</p>
                       {isCatastrophic && (
-                        <p className="text-[11px] text-[#10B981] mt-0.5 font-medium">
+                        <p className="text-[11px] text-[#0F9D58] mt-0.5 font-medium">
                           Capital preserved — unencumbered hold
                         </p>
                       )}
@@ -496,7 +496,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                         {isCatastrophic && Math.abs(s.netProfit) < 1000 ? (
                           <p className="font-mono text-sm font-semibold text-[#c0c0c0]">Preserved</p>
                         ) : (
-                          <p className={cn("font-mono text-sm font-semibold", s.netProfit >= 0 ? "text-[#10B981]" : "text-[#EF4444]")}>
+                          <p className={cn("font-mono text-sm font-semibold", s.netProfit >= 0 ? "text-[#0F9D58]" : "text-[#D32F2F]")}>
                             {s.netProfit >= 0 ? "+" : ""}{fmtShort(s.netProfit)}
                           </p>
                         )}
@@ -506,14 +506,14 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                     {/* Annual Ijarah income overlay for yield scenarios */}
                     {s.isYieldScenario && s.investorAnnualIncome > 0 && (
                       <div
-                        className="mt-1 pt-2.5 border-t border-[rgba(16,185,129,0.2)] flex items-center justify-between"
-                        style={{ background: "rgba(16,185,129,0.04)", borderRadius: 6, padding: "8px 10px", margin: "0 -2px" }}
+                        className="mt-1 pt-2.5 border-t border-[rgba(15,157,88,0.2)] flex items-center justify-between"
+                        style={{ background: "rgba(15,157,88,0.04)", borderRadius: 6, padding: "8px 10px", margin: "0 -2px" }}
                       >
                         <div>
-                          <p className="text-[11px] tracking-[0.12em] uppercase text-[#10B981] opacity-90">
+                          <p className="text-[11px] tracking-[0.12em] uppercase text-[#0F9D58] opacity-90">
                             {locale === "fr" ? "Revenu Ijarah Annuel" : "Annual Ijarah Income"}
                           </p>
-                          <p className="font-mono text-sm font-bold text-[#10B981]">
+                          <p className="font-mono text-sm font-bold text-[#0F9D58]">
                             €{Math.round(s.investorAnnualIncome).toLocaleString()}/yr
                           </p>
                         </div>
@@ -521,7 +521,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                           <p className="text-[11px] text-[#c0c0c0]">
                             {locale === "fr" ? "Rendement perpétuel" : "Perpetual yield"}
                           </p>
-                          <p className="font-mono text-xs font-semibold text-[#10B981]">
+                          <p className="font-mono text-xs font-semibold text-[#0F9D58]">
                             {s.annualYield.toFixed(1)}% p.a.
                           </p>
                         </div>
@@ -574,7 +574,7 @@ export function Syndication({ macro, t, locale }: SyndicationProps) {
                         {s.id === "catastrophic" && Math.abs(s.netProfit) < 1000 ? (
                           <span className="text-[#c0c0c0]">Preserved</span>
                         ) : (
-                          <span className={s.netProfit >= 0 ? "text-[#10B981]" : "text-[#EF4444]"}>
+                          <span className={s.netProfit >= 0 ? "text-[#0F9D58]" : "text-[#D32F2F]"}>
                             {s.netProfit >= 0 ? "+" : ""}{fmt(s.netProfit)}
                           </span>
                         )}

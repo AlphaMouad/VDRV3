@@ -174,7 +174,7 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
               <p className="vdr-section-label mb-1">
                 {rv.capitalGainLabel}
               </p>
-              <p className="font-mono text-lg text-[#10B981] font-bold">
+              <p className="font-mono text-lg text-[#0F9D58] font-bold">
                 €{taxModel.capitalGain.toLocaleString()}
               </p>
             </div>
@@ -182,7 +182,7 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
               <p className="vdr-section-label mb-1">
                 {rv.tpiTaxLabel} ({macro.tpiRate}%)
               </p>
-              <p className="font-mono text-lg text-[#EF4444] font-bold">
+              <p className="font-mono text-lg text-[#D32F2F] font-bold">
                 -€{Math.round(taxModel.tpiTax).toLocaleString()}
               </p>
             </div>
@@ -289,9 +289,9 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
 
       {/* Quitus Fiscal Trigger */}
       <Reveal delay={0.3}>
-        <div className="glass-form p-6 mb-6 border-l-2 border-[#10B981]">
+        <div className="glass-form p-6 mb-6 border-l-2 border-[#0F9D58]">
           <div className="flex items-center gap-2 mb-2">
-            <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
+            <CheckCircle2 className="w-4 h-4 text-[#0F9D58]" />
             <h3 className="text-sm font-semibold text-[#ffffff]">
               <Explain k="quitus-fiscal">{rv.quitusTitle}</Explain> — Month {macro.projectMonths - 1}
             </h3>
@@ -324,7 +324,7 @@ export function Repatriation({ macro, t, locale }: RepatriationProps) {
                 className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 sm:justify-between p-4 rounded-lg bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(190,163,101,0.2)] transition-all duration-300 group"
               >
                 <div className="flex items-center gap-3">
-                  <FileText className="w-5 h-5 text-[#EF4444] shrink-0" />
+                  <FileText className="w-5 h-5 text-[#D32F2F] shrink-0" />
                   <div>
                     <p className="text-sm text-[#ffffff] group-hover:text-[#BEA365] transition-colors">
                       {doc.file.includes("IGOC") ? <Explain k="igoc">{doc.name}</Explain> :

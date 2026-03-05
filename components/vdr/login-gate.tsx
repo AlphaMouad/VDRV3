@@ -25,8 +25,8 @@ function getCategoryInfo(type: VDRAccount["avatarType"], locale: Locale) {
   switch (type) {
     case "REPE":
       return { label: locale === "fr" ? "Fonds Immobilier Institutionnel" : "Real Estate Private Equity",
-        badge: "REPE", icon: TrendingUp, color: "#10B981",
-        border: "rgba(16,185,129,0.35)", bg: "rgba(16,185,129,0.07)", glow: "rgba(16,185,129,0.15)" }
+        badge: "REPE", icon: TrendingUp, color: "#0F9D58",
+        border: "rgba(15,157,88,0.35)", bg: "rgba(15,157,88,0.07)", glow: "rgba(15,157,88,0.15)" }
     case "FamilyOffice":
       return { label: "Family Office", badge: "FO", icon: Building2, color: "#BEA365",
         border: "rgba(190,163,101,0.45)", bg: "rgba(190,163,101,0.08)", glow: "rgba(190,163,101,0.2)" }
@@ -115,7 +115,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
   const leftStats = [
     { label: locale === "fr" ? "TRI Cible Sans Levier"  : "Target Unlevered IRR",
       sub:   locale === "fr" ? "Scénario de base · 36 mois"      : "Base case · 36 months",
-      value: "~15%",  color: "#10B981" },
+      value: "~15%",  color: "#0F9D58" },
     { label: locale === "fr" ? "MOIC LP Cible"           : "Target LP MOIC",
       sub:   locale === "fr" ? "Net de tous impôts marocains"     : "Net of all Moroccan taxes",
       value: "1.52×", color: "#BEA365" },
@@ -409,10 +409,10 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                         <span style={{
                           display: "inline-block", width: "5px", height: "5px",
                           borderRadius: "50%", flexShrink: 0,
-                          background: "#10B981", boxShadow: "0 0 6px rgba(16,185,129,0.85)",
+                          background: "#0F9D58", boxShadow: "0 0 6px rgba(15,157,88,0.85)",
                         }} />
                         <p className="font-[var(--font-jetbrains)] uppercase"
-                          style={{ fontSize: "10px", letterSpacing: "0.22em", color: "#10B981" }}>
+                          style={{ fontSize: "10px", letterSpacing: "0.22em", color: "#0F9D58" }}>
                           {locale === "fr" ? "TLS 1.3 · Chiffré · En Ligne" : "TLS 1.3 · Encrypted · Online"}
                         </p>
                       </div>
@@ -536,10 +536,10 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                         exit={{ opacity: 0, y: -5, height: 0 }}
                         transition={{ duration: 0.18 }}
                         className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl"
-                        style={{ background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.18)" }}
+                        style={{ background: "rgba(211,47,47,0.06)", border: "1px solid rgba(211,47,47,0.18)" }}
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#EF4444] shrink-0" />
-                        <p className="text-[#EF4444] leading-relaxed" style={{ fontSize: "11px" }}>{error}</p>
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#D32F2F] shrink-0" />
+                        <p className="text-[#D32F2F] leading-relaxed" style={{ fontSize: "11px" }}>{error}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -590,21 +590,21 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                     initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.15, duration: 0.5, type: "spring", stiffness: 220, damping: 18 }}
                     className="relative w-24 h-24 rounded-full flex items-center justify-center"
-                    style={{ marginBottom: "24px", border: "1px solid rgba(16,185,129,0.3)",
-                      background: "rgba(16,185,129,0.06)", boxShadow: "0 0 60px rgba(16,185,129,0.25)" }}
+                    style={{ marginBottom: "24px", border: "1px solid rgba(15,157,88,0.3)",
+                      background: "rgba(15,157,88,0.06)", boxShadow: "0 0 60px rgba(15,157,88,0.25)" }}
                   >
-                    <CheckCircle2 className="w-12 h-12 text-[#10B981]" />
-                    <motion.div className="absolute inset-0 rounded-full border border-[rgba(16,185,129,0.2)]"
+                    <CheckCircle2 className="w-12 h-12 text-[#0F9D58]" />
+                    <motion.div className="absolute inset-0 rounded-full border border-[rgba(15,157,88,0.2)]"
                       animate={{ scale: [1,1.25,1], opacity: [0.5,0,0.5] }}
                       transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }} />
-                    <motion.div className="absolute rounded-full border border-[rgba(16,185,129,0.1)]"
+                    <motion.div className="absolute rounded-full border border-[rgba(15,157,88,0.1)]"
                       style={{ inset: "-12px" }}
                       animate={{ scale: [1,1.15,1], opacity: [0.35,0,0.35] }}
                       transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.4 }} />
                   </motion.div>
 
                   <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-                    className="font-[var(--font-jetbrains)] uppercase text-[#10B981]"
+                    className="font-[var(--font-jetbrains)] uppercase text-[#0F9D58]"
                     style={{ fontSize: "11px", letterSpacing: "0.45em", marginBottom: "12px" }}>
                     {locale === "fr" ? "Identité Vérifiée · Accès Accordé" : "Identity Verified · Access Granted"}
                   </motion.p>

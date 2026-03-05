@@ -53,9 +53,9 @@ const SCENARIO_META: ScenarioMeta[] = [
   {
     id: "bull",
     icon: Flame,
-    color: "#10B981",
-    bgColor: "rgba(16,185,129,0.08)",
-    borderColor: "rgba(16,185,129,0.4)",
+    color: "#0F9D58",
+    bgColor: "rgba(15,157,88,0.08)",
+    borderColor: "rgba(15,157,88,0.4)",
     probability: "20%",
   },
   {
@@ -77,9 +77,9 @@ const SCENARIO_META: ScenarioMeta[] = [
   {
     id: "catastrophic",
     icon: AlertTriangle,
-    color: "#EF4444",
-    bgColor: "rgba(239,68,68,0.08)",
-    borderColor: "rgba(239,68,68,0.4)",
+    color: "#D32F2F",
+    bgColor: "rgba(211,47,47,0.08)",
+    borderColor: "rgba(211,47,47,0.4)",
     probability: "5%",
   },
 ]
@@ -240,7 +240,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
               <p className="vdr-section-label mb-2">
                 {t.common.weightedIrr}
               </p>
-              <p className="font-mono text-2xl sm:text-3xl md:text-4xl font-bold text-[#10B981]">
+              <p className="font-mono text-2xl sm:text-3xl md:text-4xl font-bold text-[#0F9D58]">
                 <AnimatedValue value={weighted.irr} format="percent" decimals={0} />%
               </p>
             </div>
@@ -351,13 +351,13 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                   </div>
                   <div className="glass-form p-3">
                     <p className="text-[11px] tracking-[0.15em] uppercase text-[#c4c4c4] mb-1">{sv.vefaRevenue}</p>
-                    <p className="font-mono text-lg font-bold text-[#10B981]">
+                    <p className="font-mono text-lg font-bold text-[#0F9D58]">
                       €{Math.round(result.vefaRevenue).toLocaleString()}
                     </p>
                   </div>
                   <div className="glass-form p-3">
                     <p className="text-[11px] tracking-[0.15em] uppercase text-[#c4c4c4] mb-1">{sv.tpiTax}</p>
-                    <p className="font-mono text-lg font-bold text-[#EF4444]">
+                    <p className="font-mono text-lg font-bold text-[#D32F2F]">
                       -€{Math.round(result.tpiTax).toLocaleString()}
                     </p>
                   </div>
@@ -435,7 +435,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                 <Tooltip
                   contentStyle={{
                     background: "rgba(10,10,10,0.95)",
-                    border: "1px solid rgba(255,255,255,0.12)",
+                    border: "1px solid rgba(190, 163, 101, 0.3)", boxShadow: "0 4px 20px rgba(0,0,0,0.8)", backdropFilter: "blur(8px)",
                     borderRadius: 8,
                     color: "#fff",
                     fontFamily: "var(--font-jetbrains)",
@@ -478,10 +478,10 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                   tick={{ fill: "#a3a3a3", fontSize: 9 }}
                   domain={[0, 2.5]}
                 />
-                <Radar name={sv.bullName} dataKey="bull" stroke="#10B981" fill="#10B981" fillOpacity={0.1} strokeWidth={2} animationDuration={800} animationEasing="ease-out" />
+                <Radar name={sv.bullName} dataKey="bull" stroke="#0F9D58" fill="#0F9D58" fillOpacity={0.1} strokeWidth={2} animationDuration={800} animationEasing="ease-out" />
                 <Radar name={sv.baseName} dataKey="base" stroke="#BEA365" fill="#BEA365" fillOpacity={0.08} strokeWidth={2} animationDuration={800} animationEasing="ease-out" />
                 <Radar name={sv.bearName} dataKey="bear" stroke="#F59E0B" fill="#F59E0B" fillOpacity={0.06} strokeWidth={1.5} animationDuration={800} animationEasing="ease-out" />
-                <Radar name={sv.catastrophicName} dataKey="catastrophic" stroke="#EF4444" fill="#EF4444" fillOpacity={0.04} strokeWidth={1.5} animationDuration={800} animationEasing="ease-out" />
+                <Radar name={sv.catastrophicName} dataKey="catastrophic" stroke="#D32F2F" fill="#D32F2F" fillOpacity={0.04} strokeWidth={1.5} animationDuration={800} animationEasing="ease-out" />
                 <Legend wrapperStyle={{ fontSize: 11, color: "#a3a3a3" }} />
               </RadarChart>
             </ResponsiveContainer>
@@ -568,7 +568,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="glass-form p-4 text-center">
                   <p className="vdr-section-label mb-1">{sv.lpMoic}</p>
-                  <p className={`font-mono text-2xl font-bold ${customResult.lpMOIC >= 1 ? "text-[#10B981]" : "text-[#EF4444]"}`}>
+                  <p className={`font-mono text-2xl font-bold ${customResult.lpMOIC >= 1 ? "text-[#0F9D58]" : "text-[#D32F2F]"}`}>
                     {customResult.lpMOIC.toFixed(2)}x
                   </p>
                 </div>
@@ -633,7 +633,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                 <tr className="border-b border-[rgba(255,255,255,0.04)]">
                   <td className="text-xs text-[#c0c0c0] py-3 px-3">{sv.vefaRevenue}</td>
                   {results.map(({ meta, result }) => (
-                    <td key={meta.id} className="font-mono text-xs text-[#10B981] py-3 px-3 text-right">
+                    <td key={meta.id} className="font-mono text-xs text-[#0F9D58] py-3 px-3 text-right">
                       €{Math.round(result.vefaRevenue).toLocaleString()}
                     </td>
                   ))}
@@ -652,7 +652,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                 <tr className="border-b border-[rgba(255,255,255,0.04)]">
                   <td className="text-xs text-[#c0c0c0] py-3 px-3">{sv.tpiTax}</td>
                   {results.map(({ meta, result }) => (
-                    <td key={meta.id} className="font-mono text-xs text-[#EF4444] py-3 px-3 text-right">
+                    <td key={meta.id} className="font-mono text-xs text-[#D32F2F] py-3 px-3 text-right">
                       -€{Math.round(result.tpiTax).toLocaleString()}
                     </td>
                   ))}
@@ -681,7 +681,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                 <tr className="border-b border-[rgba(255,255,255,0.04)]">
                   <td className="text-xs text-[#c0c0c0] py-3 px-3">{sv.lpProfit}</td>
                   {results.map(({ meta, result }) => (
-                    <td key={meta.id} className="font-mono text-xs font-bold py-3 px-3 text-right" style={{ color: result.lpProfit > 0 ? "#10B981" : "#EF4444" }}>
+                    <td key={meta.id} className="font-mono text-xs font-bold py-3 px-3 text-right" style={{ color: result.lpProfit > 0 ? "#0F9D58" : "#D32F2F" }}>
                       €{Math.round(result.lpProfit).toLocaleString()}
                     </td>
                   ))}
@@ -711,7 +711,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="glass-form p-4">
-              <p className="text-xs font-bold text-[#EF4444] mb-2">{sv.conventionalLabel}</p>
+              <p className="text-xs font-bold text-[#D32F2F] mb-2">{sv.conventionalLabel}</p>
               <ul className="text-[11px] text-[#c0c0c0] space-y-1.5 leading-relaxed">
                 {sv.convPoints.map((point, i) => (
                   <li key={i}>{point}</li>
@@ -721,8 +721,8 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
             <div className="flex items-center justify-center">
               <span className="vdr-section-label">{t.common.vs}</span>
             </div>
-            <div className="glass-form p-4 border border-[rgba(16,185,129,0.3)]">
-              <p className="text-xs font-bold text-[#10B981] mb-2">{sv.ambassadeurLabel}</p>
+            <div className="glass-form p-4 border border-[rgba(15,157,88,0.3)]">
+              <p className="text-xs font-bold text-[#0F9D58] mb-2">{sv.ambassadeurLabel}</p>
               <ul className="text-[11px] text-[#c0c0c0] space-y-1.5 leading-relaxed">
                 {sv.ambPoints.map((point, i) => (
                   <li key={i}>{point}</li>

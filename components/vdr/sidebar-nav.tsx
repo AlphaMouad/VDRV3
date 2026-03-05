@@ -272,9 +272,9 @@ export function SidebarNav({ activeView, onNavigate, onLogout, onSecureAllocatio
               border: "1px solid transparent",
             }}
             onMouseEnter={e => {
-              (e.currentTarget as HTMLButtonElement).style.color = "#EF4444"
-              ;(e.currentTarget as HTMLButtonElement).style.background = "rgba(239,68,68,0.05)"
-              ;(e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(239,68,68,0.1)"
+              (e.currentTarget as HTMLButtonElement).style.color = "#D32F2F"
+              ;(e.currentTarget as HTMLButtonElement).style.background = "rgba(211,47,47,0.05)"
+              ;(e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(211,47,47,0.1)"
             }}
             onMouseLeave={e => {
               (e.currentTarget as HTMLButtonElement).style.color = "#686868"
