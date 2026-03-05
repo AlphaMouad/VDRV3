@@ -411,7 +411,7 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
           </p>
           <div className="h-56 sm:h-64 md:h-72 lg:h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={comparisonData} margin={{ left: 10, right: 10, top: 10, bottom: 10 }}>
+              <BarChart data={comparisonData} margin={{ left: 10, right: 10, top: 10, bottom: 10 }} style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                 <XAxis
                   dataKey="name"
                   stroke="#a3a3a3"
@@ -434,19 +434,22 @@ export function SensitivityMatrix({ macro, t, locale }: SensitivityMatrixProps) 
                 />
                 <Tooltip
                   contentStyle={{
-                    background: "rgba(10,10,10,0.95)",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    borderRadius: 8,
-                    color: "#fff",
-                    fontFamily: "var(--font-jetbrains)",
-                    fontSize: 11,
-                  }}
+                      background: "rgba(10, 10, 10, 0.85)",
+                      border: "1px solid rgba(197, 160, 89, 0.4)",
+                      borderRadius: 8,
+                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(197, 160, 89, 0.1)",
+                      backdropFilter: "blur(12px)",
+                      color: "#fff",
+                      fontFamily: "var(--font-jetbrains)",
+                      fontSize: 12,
+                      padding: "12px 16px"
+                    }}
                   formatter={(value: number, name: string) => {
                     if (name === "moic") return [`${value}x`, sv.lpMoic]
                     return [value, name]
                   }}
                 />
-                <Bar dataKey="moic" radius={[4, 4, 0, 0]} barSize={50} animationDuration={800} animationEasing="ease-out">
+                <Bar dataKey="moic" radius={[4, 4, 0, 0]} barSize={50} animationDuration={800} animationEasing="ease-out" style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                   {comparisonData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.fill} />
                   ))}

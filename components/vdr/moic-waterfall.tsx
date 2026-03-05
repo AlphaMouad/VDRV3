@@ -266,7 +266,7 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
           </h3>
           <div className="h-56 sm:h-64 md:h-72 lg:h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{ left: 0, right: 8, top: 10, bottom: 8 }}>
+              <BarChart data={chartData} margin={{ left: 0, right: 8, top: 10, bottom: 8 }} style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                 <XAxis
                   dataKey="name"
                   stroke="#a3a3a3"
@@ -288,13 +288,16 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                 />
                 <Tooltip
                   contentStyle={{
-                    background: "rgba(10,10,10,0.95)",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    borderRadius: 8,
-                    color: "#fff",
-                    fontFamily: "var(--font-jetbrains)",
-                    fontSize: 11,
-                  }}
+                      background: "rgba(10, 10, 10, 0.85)",
+                      border: "1px solid rgba(197, 160, 89, 0.4)",
+                      borderRadius: 8,
+                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(197, 160, 89, 0.1)",
+                      backdropFilter: "blur(12px)",
+                      color: "#fff",
+                      fontFamily: "var(--font-jetbrains)",
+                      fontSize: 12,
+                      padding: "12px 16px"
+                    }}
                   formatter={(value: number, name: string) => [
                     `€${Math.round(value).toLocaleString()}`,
                     name === "lp" ? w.lpShareLabel : w.gpShareLabel,
@@ -306,12 +309,12 @@ export function MoicWaterfall({ macro, t, locale }: MoicWaterfallProps) {
                     value === "lp" ? w.lpShareLabel : w.gpShareLabel
                   }
                 />
-                <Bar dataKey="lp" stackId="a" radius={[0, 0, 0, 0]} barSize={40} animationDuration={800} animationEasing="ease-out">
+                <Bar dataKey="lp" stackId="a" radius={[0, 0, 0, 0]} barSize={40} animationDuration={800} animationEasing="ease-out" style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                   {chartData.map((_, index) => (
                     <Cell key={`lp-${index}`} fill="#C5A059" />
                   ))}
                 </Bar>
-                <Bar dataKey="gp" stackId="a" radius={[3, 3, 0, 0]} barSize={40} animationDuration={800} animationEasing="ease-out">
+                <Bar dataKey="gp" stackId="a" radius={[3, 3, 0, 0]} barSize={40} animationDuration={800} animationEasing="ease-out" style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                   {chartData.map((_, index) => (
                     <Cell key={`gp-${index}`} fill="rgba(197,160,89,0.35)" />
                   ))}

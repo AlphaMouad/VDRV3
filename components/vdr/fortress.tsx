@@ -337,7 +337,7 @@ export function Fortress({ macro, t, locale }: FortressProps) {
               </h3>
               <div className="h-48 sm:h-56 md:h-60 lg:h-64">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={yieldBreakdownData} margin={{ left: 10, right: 10, top: 10, bottom: 10 }}>
+                  <BarChart data={yieldBreakdownData} margin={{ left: 10, right: 10, top: 10, bottom: 10 }} style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                     <XAxis
                       dataKey="name"
                       stroke="#a3a3a3"
@@ -358,16 +358,19 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                     />
                     <Tooltip
                       contentStyle={{
-                        background: "rgba(10,10,10,0.95)",
-                        border: "1px solid rgba(255,255,255,0.12)",
-                        borderRadius: 8,
-                        color: "#fff",
-                        fontFamily: "var(--font-jetbrains)",
-                        fontSize: 11,
-                      }}
+                      background: "rgba(10, 10, 10, 0.85)",
+                      border: "1px solid rgba(197, 160, 89, 0.4)",
+                      borderRadius: 8,
+                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(197, 160, 89, 0.1)",
+                      backdropFilter: "blur(12px)",
+                      color: "#fff",
+                      fontFamily: "var(--font-jetbrains)",
+                      fontSize: 12,
+                      padding: "12px 16px"
+                    }}
                       formatter={(value: number) => [`€${Math.round(value).toLocaleString()}`]}
                     />
-                    <Bar dataKey="value" radius={[4, 4, 0, 0]} barSize={60} animationDuration={800} animationEasing="ease-out">
+                    <Bar dataKey="value" radius={[4, 4, 0, 0]} barSize={60} animationDuration={800} animationEasing="ease-out" style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                       {yieldBreakdownData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.fill} />
                       ))}
@@ -420,13 +423,16 @@ export function Fortress({ macro, t, locale }: FortressProps) {
                     />
                     <Tooltip
                       contentStyle={{
-                        background: "rgba(10,10,10,0.95)",
-                        border: "1px solid rgba(255,255,255,0.12)",
-                        borderRadius: 8,
-                        color: "#fff",
-                        fontFamily: "var(--font-jetbrains)",
-                        fontSize: 11,
-                      }}
+                      background: "rgba(10, 10, 10, 0.85)",
+                      border: "1px solid rgba(197, 160, 89, 0.4)",
+                      borderRadius: 8,
+                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(197, 160, 89, 0.1)",
+                      backdropFilter: "blur(12px)",
+                      color: "#fff",
+                      fontFamily: "var(--font-jetbrains)",
+                      fontSize: 12,
+                      padding: "12px 16px"
+                    }}
                       formatter={(value: number, name: string) => {
                         if (name === "noi") return [`€${value.toLocaleString()}`, fv.noiLegend]
                         return [`${value}%`, fv.yieldLegend]

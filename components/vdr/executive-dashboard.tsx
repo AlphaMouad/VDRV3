@@ -492,7 +492,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                   data={alphaWedgeData}
                   layout="vertical"
                   margin={{ left: 0, right: 16, top: 8, bottom: 8 }}
-                >
+                 style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                   <XAxis
                     type="number"
                     tickFormatter={(v) => `€${(v / 1000).toFixed(0)}k`}
@@ -513,12 +513,15 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                   <Tooltip
                     formatter={(value: number) => `€${value.toLocaleString()}`}
                     contentStyle={{
-                      background: "rgba(10,10,10,0.9)",
-                      border: "1px solid rgba(255,255,255,0.12)",
+                      background: "rgba(10, 10, 10, 0.85)",
+                      border: "1px solid rgba(197, 160, 89, 0.4)",
                       borderRadius: 8,
+                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(197, 160, 89, 0.1)",
+                      backdropFilter: "blur(12px)",
                       color: "#fff",
                       fontFamily: "var(--font-jetbrains)",
                       fontSize: 12,
+                      padding: "12px 16px"
                     }}
                   />
                   <Bar
@@ -527,7 +530,7 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
                     barSize={36}
                     animationDuration={800}
                     animationEasing="ease-out"
-                  >
+                   style={{ filter: "drop-shadow(0px 0px 8px rgba(197, 160, 89, 0.3))" }}>
                     {alphaWedgeData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.fill} />
                     ))}
