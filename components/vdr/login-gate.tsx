@@ -127,12 +127,12 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
   const onFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     e.currentTarget.style.borderColor = "rgba(190,163,101,0.55)"
     e.currentTarget.style.background  = "rgba(190,163,101,0.03)"
-    e.currentTarget.style.boxShadow   = "none"
+    e.currentTarget.style.boxShadow   = "0 0 0 1px rgba(190, 163, 101, 0.4), 0 0 12px rgba(190, 163, 101, 0.15), inset 0 2px 4px rgba(0,0,0,0.5)"
   }
   const onBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)"
     e.currentTarget.style.background  = "rgba(255,255,255,0.025)"
-    e.currentTarget.style.boxShadow   = "none"
+    e.currentTarget.style.boxShadow   = "inset 0 2px 4px rgba(0,0,0,0.5)"
   }
 
   return (
@@ -461,6 +461,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                         fontSize: "13px", letterSpacing: "0.02em",
                         color: "#dcdcdc", caretColor: "#BEA365",
                         outline: "none", transition: "all 0.22s",
+                        boxShadow: "inset 0 2px 4px rgba(0,0,0,0.5)"
                       }}
                       onFocus={onFocus} onBlur={onBlur}
                       placeholder={t.login.emailPlaceholder}
@@ -487,6 +488,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                           fontSize: "13px", letterSpacing: "0.06em",
                           color: "#dcdcdc", caretColor: "#BEA365",
                           outline: "none", transition: "all 0.22s",
+                          boxShadow: "inset 0 2px 4px rgba(0,0,0,0.5)"
                         }}
                         onFocus={onFocus} onBlur={onBlur}
                         placeholder={t.login.passwordPlaceholder}
@@ -603,30 +605,30 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                       transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.4 }} />
                   </motion.div>
 
-                  <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+                  <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
                     className="font-[var(--font-jetbrains)] uppercase text-[#0F9D58]"
                     style={{ fontSize: "11px", letterSpacing: "0.45em", marginBottom: "12px" }}>
                     {locale === "fr" ? "Identité Vérifiée · Accès Accordé" : "Identity Verified · Access Granted"}
                   </motion.p>
 
-                  <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+                  <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
                     className="font-[var(--font-playfair)] text-xl sm:text-2xl lg:text-3xl" style={{ color: "rgba(255,255,255,0.65)", marginBottom: "2px" }}>
                     {locale === "fr" ? "Bienvenue," : "Welcome,"}
                   </motion.p>
 
-                  <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.62 }}
+                  <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.85 }}
                     className="gold-text-gradient font-[var(--font-playfair)] text-xl sm:text-2xl lg:text-3xl font-semibold" style={{ marginBottom: "4px" }}>
                     {authAccount.fullName}
                   </motion.p>
 
-                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.72 }}
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.0 }}
                     className="font-[var(--font-jetbrains)] uppercase"
                     style={{ fontSize: "12px", letterSpacing: "0.25em", color: "#a8a8a8", marginBottom: "28px" }}>
                     {authAccount.companyName}&nbsp;&mdash;&nbsp;{authAccount.investorId}
                   </motion.p>
 
                   <motion.div initial={{ opacity: 0, scale: 0.9, y: 8 }} animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ delay: 0.82, duration: 0.5, type: "spring", stiffness: 180 }}
+                    transition={{ delay: 1.15, duration: 0.5, type: "spring", stiffness: 180 }}
                     className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl"
                     style={{ marginBottom: "36px", border: `1px solid ${cat.border}`,
                       background: cat.bg, boxShadow: `0 0 30px ${cat.glow}` }}>
@@ -649,7 +651,7 @@ export function LoginGate({ onLogin, t, locale, onSwitchLocale }: LoginGateProps
                     </span>
                   </motion.div>
 
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
+                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
                     className="flex items-center gap-2">
                     {[0,1,2].map(i => (
                       <motion.div key={i} className="w-1.5 h-1.5 rounded-full bg-[#BEA365]"
