@@ -319,6 +319,30 @@ input[type='range']::-webkit-slider-thumb:hover {
   animation: pulse-dot 2.2s ease-in-out infinite;
 }
 
+/* ── Extra Elite Scanline Animations ── */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(197, 160, 89, 0.4) 50%,
+    transparent 100%
+  );
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.5;
+}
+
 /* ── Elite Section Divider ── */
 .elite-divider {
   height: 1px;
@@ -666,4 +690,32 @@ input:-webkit-autofill:active {
   box-shadow:
     0 -16px 48px -10px rgba(0, 0, 0, 0.96),
     0 -1px 0 rgba(197, 160, 89, 0.07);
+}
+
+/* ── Elite Tooltip & Chart Styles ── */
+.recharts-default-tooltip {
+  background: rgba(10, 10, 10, 0.85) !important;
+  border: 1px solid rgba(197, 160, 89, 0.4) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(197, 160, 89, 0.1) !important;
+  backdrop-filter: blur(12px) !important;
+  padding: 12px 16px !important;
+}
+
+.recharts-tooltip-label {
+  font-family: var(--font-jetbrains) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #a8a8a8 !important;
+  margin-bottom: 8px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-bottom: 6px !important;
+}
+
+.recharts-tooltip-item {
+  font-family: var(--font-jetbrains) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 4px 0 !important;
 }
