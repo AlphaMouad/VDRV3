@@ -223,6 +223,8 @@ export function ExecutiveDashboard({ macro, t, locale, account, onNavigate }: Ex
         title={t.dashboard.videoTitle}
         subtitle={t.dashboard.videoSubtitle}
         locale={locale}
+        libraryId="555558"
+        videoId="891dd20a-66b8-4a2c-903d-2e6a377be2c8"
       />
 
       {/* ═══════════════════════════════════════════════════════
